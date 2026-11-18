@@ -17,23 +17,37 @@ namespace WPF_Projekt3_TaxaFirma
     /// </summary>
     public partial class MainWindow : Window
     {
+        Taxafirma taxafirma = new Taxafirma();
         public MainWindow()
         {
-            Taxafirma taxafirma = new Taxafirma();
+            InitializeComponent();
+
             Kunde k1 = new Kunde();
             k1.brugerNavn = "Carlos";
             k1.adgangskode = "123";
             taxafirma.listKunder.Add(k1);
-            Console.WriteLine();
-            taxafirma.FindKunde(TxtBoxBrugernavn.Text, TxtBoxAdgangskode.Text);
-            //InitializeComponent();
+
+            Kunde k2 = new Kunde {brugerNavn = "Bent", adgangskode = "hej med dig" };
+            taxafirma.listKunder.Add(k2);
+          
+            
+          
         }
 
-        public void Button_Click(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
             //string navn = TxtBoxBrugernavn.Text;
             //string kode = TxtBoxAdgangskode.Text;
+            bool logindGodkendt = taxafirma.FindKunde(TxtBoxBrugernavn.Text, TxtBoxAdgangskode.Text);
 
+            if(logindGodkendt)
+            {
+                TxtBoxBesked.Text = "Yupiiiii!";
+            }
+            else
+            {
+                TxtBoxBesked.Text = "Puuuhhaaaa :(";
+            }
         }
     }
 }

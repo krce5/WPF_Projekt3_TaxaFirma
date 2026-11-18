@@ -9,15 +9,22 @@ namespace WPF_Projekt3_TaxaFirma
     {
         public List<Kunde> listKunder = new List<Kunde>();
   
-        public void FindKunde(string brugerNavn, string adgangskode)
+        public bool FindKunde(string brugerNavn, string adgangskode)
         {
             int i = 0;
             while (i < listKunder.Count)
             {
-                if(brugerNavn == listKunder.k1.brugerNavn)
+                Kunde kunde = listKunder[i]; //opret en object for at få adgang til listen
+                if(brugerNavn == kunde.brugerNavn && adgangskode == kunde.adgangskode)
+                {
+                    kunde.erLoggetInd = true;
+                    return true;
+
+                }
 
                 i++;
             }
+            return false;
         }
     }
 }
