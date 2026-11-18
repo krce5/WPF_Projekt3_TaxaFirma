@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.Security.Cryptography.X509Certificates;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -18,15 +19,21 @@ namespace WPF_Projekt3_TaxaFirma
     {
         public MainWindow()
         {
-            InitializeComponent();
+            Taxafirma taxafirma = new Taxafirma();
+            Kunde k1 = new Kunde();
+            k1.brugerNavn = "Carlos";
+            k1.adgangskode = "123";
+            taxafirma.listKunder.Add(k1);
+            Console.WriteLine();
+            taxafirma.FindKunde(TxtBoxBrugernavn.Text, TxtBoxAdgangskode.Text);
+            //InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        public void Button_Click(object sender, RoutedEventArgs e)
         {
-            //kommentar test
-            //ny test K
-            //Carlos test
-            //seje
+            //string navn = TxtBoxBrugernavn.Text;
+            //string kode = TxtBoxAdgangskode.Text;
+
         }
     }
 }
