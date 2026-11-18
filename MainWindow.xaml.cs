@@ -25,7 +25,7 @@ namespace WPF_Projekt3_TaxaFirma
         {
             //kommentar test
             //ny test K
-            //Carlos
+            //Carlos test
         }
     }
 }
