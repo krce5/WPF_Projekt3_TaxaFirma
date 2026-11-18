@@ -18,8 +18,10 @@ namespace WPF_Projekt3_TaxaFirma
     public partial class MainWindow : Window
     {
         Taxafirma taxafirma = new Taxafirma();
-        public MainWindow()
+        Taxafirma t = new Taxafirma();
+        public MainWindow(Taxafirma taxaStation)
         {
+            t = taxaStation;
             InitializeComponent();
 
             Kunde k1 = new Kunde();
@@ -43,6 +45,8 @@ namespace WPF_Projekt3_TaxaFirma
             if(logindGodkendt)
             {
                 TxtBoxBesked.Text = "Yupiiiii!";
+                KundeBestillingsSide kundeSide = new KundeBestillingsSide(t);
+                kundeSide.Show();
             }
             else
             {
