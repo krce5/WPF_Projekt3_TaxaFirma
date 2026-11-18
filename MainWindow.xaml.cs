@@ -24,6 +24,7 @@ namespace WPF_Projekt3_TaxaFirma
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             //kommentar test
+            //ny test K
         }
     }
 }
