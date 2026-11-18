@@ -8,6 +8,7 @@ namespace WPF_Projekt3_TaxaFirma
     public class Taxafirma
     {
         public List<Kunde> listKunder = new List<Kunde>();
+        public List<Taxa> listTaxaer = new List<Taxa>();
   
         public bool FindKunde(string brugerNavn, string adgangskode)
         {
@@ -25,6 +26,22 @@ namespace WPF_Projekt3_TaxaFirma
                 i++;
             }
             return false;
+        }
+
+        public bool FindTaxa()
+        {
+            int i = 0;
+            while (i < listTaxaer.Count)
+            {
+                Taxa taxa = listTaxaer[i];
+                if(taxa.erLedig == true)
+                {
+                    taxa.erLedig = false;
+                    return false;
+                }
+                i++;
+                return true;
+            }
         }
     }
 }

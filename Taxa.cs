@@ -4,7 +4,9 @@ using System.Text;
 
 namespace WPF_Projekt3_TaxaFirma
 {
-    public class KundeBestillingsSide
+    public class Taxa
     {
+        public bool erLedig;
+        public string nrPlade;
     }
 }

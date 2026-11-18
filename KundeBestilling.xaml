@@ -7,6 +7,13 @@
         mc:Ignorable="d"
         Title="KundeBestilling" Height="450" Width="800">
     <Grid>
-        
+        <TextBox x:Name="TxtBoxStedA" HorizontalAlignment="Left" Margin="135,161,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Height="56"/>
+        <TextBox x:Name="TxtBoxStedB" HorizontalAlignment="Center" Margin="0,161,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Height="56"/>
+        <Button x:Name="KnapBestil" Content="Bestil" HorizontalAlignment="Left" Margin="492,332,0,0" VerticalAlignment="Top" Width="134" Height="61" Click="KnapBestil_Click"/>
+        <Label Content="Fra" HorizontalAlignment="Left" Margin="81,176,0,0" VerticalAlignment="Top"/>
+        <Label Content="Til" HorizontalAlignment="Left" Margin="297,176,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="KnapFindTaxa" Content="Find Taxaer" HorizontalAlignment="Left" Margin="492,168,0,0" VerticalAlignment="Top" Width="134" Height="42" Click="KnapFindTaxa_Click"/>
+        <Label x:Name="LblBesked" Content="" HorizontalAlignment="Left" Margin="492,102,0,0" VerticalAlignment="Top" Width="206"/>
+
     </Grid>
 </Window>
