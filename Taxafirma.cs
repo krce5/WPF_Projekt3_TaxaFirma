@@ -28,21 +28,22 @@ namespace WPF_Projekt3_TaxaFirma
             return false;
         }
 
-        public bool FindTaxa() //finder den ledige taxa og ændre den fra true til false
+        public bool FindTaxa(Taxa valgt) //finder den ledige taxa og ændre den fra true til false
         {
-            int i = 0;
-            while (i < listTaxaer.Count)
+           
+            
+            
+             Taxa taxa = valgt;
+            if(taxa.erLedig == true)
             {
-                Taxa taxa = listTaxaer[i];
-                if(taxa.erLedig == true)
-                {
-                    taxa.erLedig = false;
-                    return true;
-                }
-                i++;
-                
+                 taxa.erLedig = false;
+                 return true;
             }
-            return true;
+            else
+            {
+                return false;
+
+            }     
         }
 
         public string FindTaxaNrplade() 

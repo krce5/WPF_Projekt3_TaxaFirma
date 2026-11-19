@@ -41,22 +41,41 @@ namespace WPF_Projekt3_TaxaFirma
 
         private void KnapBestil_Click(object sender, RoutedEventArgs e)
         {
-            bool svar = taxafirma.FindTaxa();
-            string nrnr = taxafirma.FindTaxaNrplade();
+            Taxa valgt = (Taxa)ListBoxLedigTaxa.SelectedItem;
+            bool svar = taxafirma.FindTaxa(valgt);
+           // string nrnr = taxafirma.FindTaxaNrplade();
             if (svar)
             {
-                LblBesked.Content = nrnr;
+                
+                valgt.erLedig = false;
+                ListBoxLedigTaxa.ItemsSource = null;
+                ListBoxLedigTaxa.ItemsSource = taxafirma.listTaxaer;
+                LblBesked.Content = "du har bestilt denne taxa";
             }
             else
             {
-                LblBesked.Content = "nej";
+                LblBesked.Content = "Denne taxa er ikke ledig";
             }
 
         }
 
         private void ListBoxLedigTaxa_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            
+            Taxa valgt = (Taxa)ListBoxLedigTaxa.SelectedItem;
+            if(valgt != null)
+            {
+               // ListBoxLedigTaxa.ItemsSource = null;
+               // ListBoxLedigTaxa.ItemsSource = taxafirma.listTaxaer;
+                if (valgt.erLedig == true)
+                {
+                    LblSvar.Content = "Du har valgt: " + valgt.nrPlade;
+                }
+                else
+                {
+                    LblSvar.Content = "Denne Taxa er ikke ledig: " + valgt.nrPlade;
+
+                }
+            }
         }
     }
 }

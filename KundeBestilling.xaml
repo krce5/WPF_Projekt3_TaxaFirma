@@ -13,8 +13,9 @@
         <Label Content="Fra" HorizontalAlignment="Left" Margin="81,176,0,0" VerticalAlignment="Top"/>
         <Label Content="Til" HorizontalAlignment="Left" Margin="297,176,0,0" VerticalAlignment="Top"/>
         <Button x:Name="KnapFindTaxa" Content="Find Taxaer" HorizontalAlignment="Left" Margin="492,168,0,0" VerticalAlignment="Top" Width="134" Height="42" Click="KnapFindTaxa_Click"/>
-        <Label x:Name="LblBesked" Content="" HorizontalAlignment="Left" Margin="492,102,0,0" VerticalAlignment="Top" Width="206"/>
+        <Label x:Name="LblBesked" Content="" HorizontalAlignment="Left" Margin="453,102,0,0" VerticalAlignment="Top" Width="245"/>
         <ListBox x:Name="ListBoxLedigTaxa" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="135,241,340,24" SelectionChanged="ListBoxLedigTaxa_SelectionChanged"/>
+        <Label x:Name="LblSvar" Content="" HorizontalAlignment="Left" Margin="492,274,0,0" VerticalAlignment="Top" Height="52" Width="255"/>
 
     </Grid>
 </Window>
