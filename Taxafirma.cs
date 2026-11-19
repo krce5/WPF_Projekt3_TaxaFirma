@@ -28,7 +28,7 @@ namespace WPF_Projekt3_TaxaFirma
             return false;
         }
 
-        public bool FindTaxa()
+        public bool FindTaxa() //finder den ledige taxa og ændre den fra true til false
         {
             int i = 0;
             while (i < listTaxaer.Count)
@@ -37,11 +37,28 @@ namespace WPF_Projekt3_TaxaFirma
                 if(taxa.erLedig == true)
                 {
                     taxa.erLedig = false;
-                    return false;
+                    return true;
                 }
                 i++;
-                return true;
+                
             }
+            return true;
+        }
+
+        public string FindTaxaNrplade() 
+        {
+            int i = 0;
+            string svar = "";
+            while(i < listTaxaer.Count)
+            {
+                Taxa taxanr = listTaxaer[i];
+                if(taxanr.erLedig == true)
+                {
+                    svar = taxanr.nrPlade;
+                }
+                i++;
+            }
+            return svar;
         }
     }
 }
