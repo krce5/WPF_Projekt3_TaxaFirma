@@ -82,7 +82,7 @@ namespace WPF_Projekt3_TaxaFirma
         public void ÆndreStatusStartVagt(string brugerNavn)
         {
             Chauffør ch1 = new Chauffør();
-            ch1.brugerNavn = brugerNavn;
+            //ch1.brugerNavn = brugerNavn;
             //bool chaufførVariabel = FindChauffør(ch1.brugerNavn,ch1.adgangskode);
             int i = 0;
             ChaufførSide chaufførside = new ChaufførSide();

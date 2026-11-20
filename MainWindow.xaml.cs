@@ -69,6 +69,7 @@ namespace WPF_Projekt3_TaxaFirma
                 chaufførSide.Show();
                 this.Close();
                 chaufførSide.LblVelkommen.Content = "Velkommen " + TxtBoxBrugernavn.Text;
+                //test
             }
             else
             {
