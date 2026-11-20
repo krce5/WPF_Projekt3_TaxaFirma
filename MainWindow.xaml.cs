@@ -65,7 +65,7 @@ namespace WPF_Projekt3_TaxaFirma
             {
 
                 TxtBoxBesked.Text = "Yupiiiii!";
-                ChaufførSide chaufførSide = new ChaufførSide();
+                ChaufførSide chaufførSide = new ChaufførSide(taxafirma, TxtBoxBrugernavn.Text);
                 chaufførSide.Show();
                 this.Close();
                 chaufførSide.LblVelkommen.Content = "Velkommen " + TxtBoxBrugernavn.Text;

@@ -17,23 +17,25 @@ namespace WPF_Projekt3_TaxaFirma
     /// </summary>
     public partial class ChaufførSide : Window
     {
-        Taxafirma taxafirma = new Taxafirma();
+        private Taxafirma taxafirma = new Taxafirma();
+        private string brugerNavn = "";
+
         public ChaufførSide()
         {
             InitializeComponent();
-     
-          
+        }
+
+        public ChaufførSide(Taxafirma taxafirma, string brugerNavn)
+        {
+            InitializeComponent();
+            this.taxafirma = taxafirma;
+            this.brugerNavn = brugerNavn;
         }
 
         private void KnapStartVagt_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow mw = new MainWindow();
-            Chauffør chauffør = new Chauffør();
-            bool ændreStatus = taxafirma.ÆndreStatusStartVagt(mw.TxtBoxBrugernavn.Text);
+            bool ændreStatus = taxafirma.ÆndreStatusStartVagt(brugerNavn);
             TxtBoxStatus.Text = "Du har startet din vagt: " + ændreStatus;
-
-            Console.WriteLine();
-
         }
     }
 }
