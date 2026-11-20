@@ -65,6 +65,7 @@ namespace WPF_Projekt3_TaxaFirma
             {
 
                 TxtBoxBesked.Text = "Yupiiiii!";
+                // Sender det eksisterende taxafirma og chaufførens brugernavn til chaufførvinduet.
                 ChaufførSide chaufførSide = new ChaufførSide(taxafirma, TxtBoxBrugernavn.Text);
                 chaufførSide.Show();
                 this.Close();

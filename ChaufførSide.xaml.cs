@@ -20,20 +20,26 @@ namespace WPF_Projekt3_TaxaFirma
         private Taxafirma taxafirma = new Taxafirma();
         private string brugerNavn = "";
 
+        // Standard-constructoren bruges til at oprette chaufførvinduet uden ekstra oplysninger.
         public ChaufførSide()
         {
             InitializeComponent();
         }
 
+        // Denne constructor modtager det eksisterende taxafirma og brugernavnet fra loginvinduet.
+        // På den måde bruger chaufførvinduet den samme liste over chauffører.
         public ChaufførSide(Taxafirma taxafirma, string brugerNavn)
         {
             InitializeComponent();
+
+            // Gemmer de modtagne værdier, så de kan bruges af start-vagt-knappen.
             this.taxafirma = taxafirma;
             this.brugerNavn = brugerNavn;
         }
 
         private void KnapStartVagt_Click(object sender, RoutedEventArgs e)
         {
+            // Finder den loggede chauffør og ændrer start-status til true.
             bool ændreStatus = taxafirma.ÆndreStatusStartVagt(brugerNavn);
             TxtBoxStatus.Text = "Du har startet din vagt: " + ændreStatus;
         }
