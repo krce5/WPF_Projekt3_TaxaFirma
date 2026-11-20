@@ -29,8 +29,8 @@ namespace WPF_Projekt3_TaxaFirma
         {
             MainWindow mw = new MainWindow();
             Chauffør chauffør = new Chauffør();
-            TxtBoxStatus.Text = "Du har startet din vagt: " + chauffør.start;
-            taxafirma.ÆndreStatusStartVagt(mw.TxtBoxBrugernavn.Text);
+            bool ændreStatus = taxafirma.ÆndreStatusStartVagt(mw.TxtBoxBrugernavn.Text);
+            TxtBoxStatus.Text = "Du har startet din vagt: " + ændreStatus;
 
             Console.WriteLine();
 
