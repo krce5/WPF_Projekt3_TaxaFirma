@@ -9,6 +9,8 @@ namespace WPF_Projekt3_TaxaFirma
     {
         public List<Kunde> listKunder = new List<Kunde>();
         public List<Taxa> listTaxaer = new List<Taxa>();
+
+        public List<Chauffør> listChauffører = new List<Chauffør>();
   
         public bool FindKunde(string brugerNavn, string adgangskode)
         {
@@ -27,13 +29,28 @@ namespace WPF_Projekt3_TaxaFirma
             }
             return false;
         }
+        public bool FindChauffør( string brugerNavn, string adgangskode)
+        {
+            int i = 0;
+            while(i< listChauffører.Count)
+            {
+                Chauffør ch = listChauffører[i];
+                if(brugerNavn == ch.brugerNavn && adgangskode == ch.adgangskode)
+                {
+                    ch.erLoggetInd = true;
+                    return true;
+                }
+
+                i++;
+            }
+
+
+            return false;
+        }
 
         public bool FindTaxa(Taxa valgt) //finder den ledige taxa og ændre den fra true til false
-        {
-           
-            
-            
-             Taxa taxa = valgt;
+        { 
+            Taxa taxa = valgt;
             if(taxa.erLedig == true)
             {
                  taxa.erLedig = false;
@@ -60,6 +77,14 @@ namespace WPF_Projekt3_TaxaFirma
                 i++;
             }
             return svar;
+        }
+
+        public void ÆndreStatus()
+        {
+            Chauffør ch1 = new Chauffør();
+            bool chaufførVariabel = FindChauffør(ch1.brugerNavn,ch1.adgangskode);
+
+            Console.WriteLine();
         }
     }
 }
