@@ -81,10 +81,8 @@ namespace WPF_Projekt3_TaxaFirma
 
         public bool ÆndreStatusStartVagt(string brugerNavn)
         {
-           
-    
-            //bool chaufførVariabel = FindChauffør(ch1.brugerNavn,ch1.adgangskode);
             int i = 0;
+            bool svar = true;
             ChaufførSide chaufførside = new ChaufførSide();
 
             while(i < listChauffører.Count)
@@ -92,15 +90,75 @@ namespace WPF_Projekt3_TaxaFirma
                 Chauffør ch1 = listChauffører[i];
                 if (ch1.brugerNavn == brugerNavn)
                 {
-                    ch1.start = true;
-                    return true;
+                    if (ch1.start == false)
+                    {
+                        ch1.start = true;
+                        svar = true;
+                    }
+                    else
+                    {
+                        ch1.start = false;
+                        svar = false;
+                    }
                 }
-                
                 i++;
             }
-            return false;
-            Console.WriteLine();
-
+            return svar;
         }
+
+        public bool ÆndreStatusLedighed(string brugerNavn)
+        {
+            int i = 0;
+            bool svar = false;
+            ChaufførSide chaufførside = new ChaufførSide();
+
+            while (i < listChauffører.Count)
+            {
+                Chauffør ch1 = listChauffører[i];
+                if (ch1.brugerNavn == brugerNavn)
+                {
+                    if (ch1.erLedig == true)
+                    {
+                        ch1.erLedig = false;
+                        svar = false;
+                    }
+                    else
+                    {
+                        ch1.erLedig = true;
+                        svar = true;
+                    }
+                }
+                i++;
+            }
+            return svar;
+        }
+
+        public bool ÆndreStatusPause(string brugerNavn)
+        {
+            int i = 0;
+            bool svar = false;
+            ChaufførSide chaufførside = new ChaufførSide();
+
+            while (i < listChauffører.Count)
+            {
+                Chauffør ch1 = listChauffører[i];
+                if (ch1.brugerNavn == brugerNavn)
+                {
+                    if (ch1.pause == false)
+                    {
+                        ch1.pause = true;
+                        svar = true;
+                    }
+                    else
+                    {
+                        ch1.pause = false;
+                        svar = false;
+                    }
+                }
+                i++;
+            }
+            return svar;
+        }
+
     }
 }

@@ -41,7 +41,47 @@ namespace WPF_Projekt3_TaxaFirma
         {
             // Finder den loggede chauffør og ændrer start-status til true.
             bool ændreStatus = taxafirma.ÆndreStatusStartVagt(brugerNavn);
-            TxtBoxStatus.Text = "Du har startet din vagt: " + ændreStatus;
+            if (ændreStatus == true)
+            {
+                TxtBoxStatus.Text = "Du har startet din vagt: " + ændreStatus;
+            }
+            else
+            {
+                TxtBoxStatus.Text = "Din vagt er afsluttet: " + ændreStatus;
+            }
+        }
+
+        private void KnapLedighed_Click(object sender, RoutedEventArgs e)
+        {
+            TxtBoxStatus.Text = null;
+            bool ændreStatus = taxafirma.ÆndreStatusLedighed(brugerNavn);
+            if (ændreStatus == false)
+            {
+                TxtBoxStatus.Text = "Du er ikke ledig: " + ændreStatus;
+            }
+            else
+            {
+                TxtBoxStatus.Text = "Du er ledig: " + ændreStatus;
+            }
+        }
+
+        private void KnapPause_Click(object sender, RoutedEventArgs e)
+        {
+            TxtBoxStatus.Text = null;
+            bool ændreStatus = taxafirma.ÆndreStatusPause(brugerNavn);
+            if (ændreStatus == true)
+            {
+                TxtBoxStatus.Text = "Du har startet din pause: " + ændreStatus;
+            }
+            else
+            {
+                TxtBoxStatus.Text = "Din pause er slut: " + ændreStatus;
+            }
+        }
+
+        private void KnapAfslutVagt_Click(object sender, RoutedEventArgs e)
+        {
+            
         }
     }
 }

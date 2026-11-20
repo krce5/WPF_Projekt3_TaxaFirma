@@ -9,10 +9,9 @@
     <Grid>
         <Label Content="Din status:" HorizontalAlignment="Left" Margin="48,264,0,0" VerticalAlignment="Top" Width="71"/>
         <TextBox x:Name="TxtBoxStatus" HorizontalAlignment="Left" Margin="124,268,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="KnapStartVagt" Content="Start vagt" HorizontalAlignment="Left" Margin="48,330,0,0" VerticalAlignment="Top" Height="36" Width="97" Click="KnapStartVagt_Click"/>
-        <Button x:Name="KnapLedighed" Content="Ledig / Ikke Ledig" HorizontalAlignment="Left" Margin="209,330,0,0" VerticalAlignment="Top" Height="36" Width="115"/>
-        <Button x:Name="KnapPause" Content="Start / Slut Pause" HorizontalAlignment="Left" Margin="378,330,0,0" VerticalAlignment="Top" Height="36" Width="116"/>
-        <Button x:Name="KnapAfslutVagt" Content="Afslut Vagt" HorizontalAlignment="Left" Margin="544,330,0,0" VerticalAlignment="Top" Height="36" Width="97"/>
+        <Button x:Name="KnapStartVagt" Content="Start / Afslut Vagt" HorizontalAlignment="Left" Margin="48,330,0,0" VerticalAlignment="Top" Height="36" Width="97" Click="KnapStartVagt_Click"/>
+        <Button x:Name="KnapLedighed" Content="Ledig / Ikke Ledig" HorizontalAlignment="Left" Margin="209,330,0,0" VerticalAlignment="Top" Height="36" Width="115" Click="KnapLedighed_Click"/>
+        <Button x:Name="KnapPause" Content="Start / Slut Pause" HorizontalAlignment="Left" Margin="378,330,0,0" VerticalAlignment="Top" Height="36" Width="116" Click="KnapPause_Click"/>
         <Label x:Name="LblVelkommen" Content="Velkommen" HorizontalAlignment="Left" Margin="33,67,0,0" VerticalAlignment="Top" Width="233"/>
 
     </Grid>
