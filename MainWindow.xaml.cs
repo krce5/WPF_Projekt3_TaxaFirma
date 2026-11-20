@@ -40,10 +40,13 @@ namespace WPF_Projekt3_TaxaFirma
             taxafirma.listTaxaer.Add(t3);
             taxafirma.listTaxaer.Add(t4);
 
+
             Chauffør ch1 = new Chauffør {brugerNavn = "Bob", adgangskode = "123" };
             Chauffør ch2 = new Chauffør { brugerNavn = "Mogens", adgangskode = "321"};
             taxafirma.listChauffører.Add(ch1);
             taxafirma.listChauffører.Add(ch2);
+
+
           
         }
 

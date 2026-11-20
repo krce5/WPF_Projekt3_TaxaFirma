@@ -13,6 +13,7 @@
         <Button x:Name="KnapLedighed" Content="Ledig / Ikke Ledig" HorizontalAlignment="Left" Margin="209,330,0,0" VerticalAlignment="Top" Height="36" Width="115" Click="KnapLedighed_Click"/>
         <Button x:Name="KnapPause" Content="Start / Slut Pause" HorizontalAlignment="Left" Margin="378,330,0,0" VerticalAlignment="Top" Height="36" Width="116" Click="KnapPause_Click"/>
         <Label x:Name="LblVelkommen" Content="Velkommen" HorizontalAlignment="Left" Margin="33,67,0,0" VerticalAlignment="Top" Width="233"/>
+        <Label x:Name="LblNrPlade" Content="I dag skal du køre med: " HorizontalAlignment="Left" Margin="33,114,0,0" VerticalAlignment="Top" Width="180"/>
 
     </Grid>
 </Window>
