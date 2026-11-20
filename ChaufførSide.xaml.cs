@@ -27,7 +27,13 @@ namespace WPF_Projekt3_TaxaFirma
 
         private void KnapStartVagt_Click(object sender, RoutedEventArgs e)
         {
-            taxafirma.ÆndreStatus();
+            MainWindow mw = new MainWindow();
+            Chauffør chauffør = new Chauffør();
+            TxtBoxStatus.Text = "Du har startet din vagt: " + chauffør.start;
+            taxafirma.ÆndreStatusStartVagt(mw.TxtBoxBrugernavn.Text);
+
+            Console.WriteLine();
+
         }
     }
 }

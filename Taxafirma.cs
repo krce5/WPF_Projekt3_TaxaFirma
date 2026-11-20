@@ -79,12 +79,26 @@ namespace WPF_Projekt3_TaxaFirma
             return svar;
         }
 
-        public void ÆndreStatus()
+        public void ÆndreStatusStartVagt(string brugerNavn)
         {
             Chauffør ch1 = new Chauffør();
-            bool chaufførVariabel = FindChauffør(ch1.brugerNavn,ch1.adgangskode);
+            ch1.brugerNavn = brugerNavn;
+            //bool chaufførVariabel = FindChauffør(ch1.brugerNavn,ch1.adgangskode);
+            int i = 0;
+            ChaufførSide chaufførside = new ChaufførSide();
+
+            while(i < listChauffører.Count)
+            {
+                if(chaufførside.TxtBoxStatus.Text == brugerNavn)
+                {
+                    ch1.start = true;
+                }
+
+                i++;
+            }
 
             Console.WriteLine();
+
         }
     }
 }

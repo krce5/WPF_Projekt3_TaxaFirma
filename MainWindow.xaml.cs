@@ -68,7 +68,7 @@ namespace WPF_Projekt3_TaxaFirma
                 ChaufførSide chaufførSide = new ChaufførSide();
                 chaufførSide.Show();
                 this.Close();
-                chaufførSide.LblVelkommen.Content = "Velkommen " + taxafirma.listChauffører.ch1.brugerNavn;
+                chaufførSide.LblVelkommen.Content = "Velkommen " + TxtBoxBrugernavn.Text;
             }
             else
             {
