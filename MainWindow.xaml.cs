@@ -41,8 +41,8 @@ namespace WPF_Projekt3_TaxaFirma
             taxafirma.listTaxaer.Add(t4);
 
 
-            Chauffør ch1 = new Chauffør {brugerNavn = "Bob", adgangskode = "123" };
-            Chauffør ch2 = new Chauffør { brugerNavn = "Mogens", adgangskode = "321"};
+            Chauffør ch1 = new Chauffør { brugerNavn = "Bob", adgangskode = "123", tildeltTaxa = t1};
+            Chauffør ch2 = new Chauffør { brugerNavn = "Mogens", adgangskode = "321", tildeltTaxa = t2};
             taxafirma.listChauffører.Add(ch1);
             taxafirma.listChauffører.Add(ch2);
 
@@ -74,6 +74,10 @@ namespace WPF_Projekt3_TaxaFirma
                 this.Close();
                 chaufførSide.LblVelkommen.Content = "Velkommen " + TxtBoxBrugernavn.Text;
                 //test
+                string nrplade = taxafirma.FindchaufførNrplade(TxtBoxBrugernavn.Text);
+
+
+                chaufførSide.LblNrPlade.Content = "Du skal kører med " + nrplade;
             }
             else
             {

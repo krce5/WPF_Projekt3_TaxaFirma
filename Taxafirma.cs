@@ -79,6 +79,31 @@ namespace WPF_Projekt3_TaxaFirma
             return svar;
         }
 
+        public string FindchaufførNrplade(String brugerNavn )
+        {
+            int i = 0;
+            string svar = "";
+            while(i < listChauffører.Count)
+            {
+                Chauffør Ch = listChauffører[i];
+                
+                if(brugerNavn == Ch.brugerNavn)
+                {
+
+
+                    svar = Ch.tildeltTaxa.nrPlade;
+                }
+
+
+
+                i++;
+            }
+            return svar;
+
+        }
+
+
+
         public bool ÆndreStatusStartVagt(string brugerNavn)
         {
             int i = 0;

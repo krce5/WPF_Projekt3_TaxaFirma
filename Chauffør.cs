@@ -16,5 +16,7 @@ namespace WPF_Projekt3_TaxaFirma
         public List<Taxa> listChTaxaer = new List<Taxa>();
 
         public double arbejdstid;
+
+        public Taxa tildeltTaxa;
     }
 }
