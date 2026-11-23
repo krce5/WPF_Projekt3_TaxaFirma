@@ -204,18 +204,62 @@ namespace WPF_Projekt3_TaxaFirma
             }
             return svar;
         }
-
-        public void GemRuten(string stedA, string stedB)
+        public Bestilling OpretBestilling(string brugerNavnKunde, Taxa taxa, string stedA, string stedB)
         {
-            Bestilling b1 = new Bestilling();
-            b1.A = stedA;
-            b1.B = stedB;
+            Bestilling bestilling = new Bestilling();
+            Kunde lokalKunde = Find(brugerNavnKunde);
+            Chauffør lokalChauffør = Find(taxa);
+            
+            int lokalBestillingsNR = rndBestillingsNr();
+            bestilling.Ch = lokalChauffør;
+            bestilling.kunde = lokalKunde;
+            bestilling.A = stedA;
+            bestilling.B = stedB;
+            bestilling.bestillingsNr = lokalBestillingsNR;
+            bestilling.Taxa = lokalChauffør.tildeltTaxa;
+
+            listBestillinger.Add(bestilling);
+
+            return bestilling;
+        }
+        private int rndBestillingsNr()
+        {
+            Random random = new Random();
+            int svar = random.Next(1000, 2000);
+            return svar;
         }
 
-        public void OpretBestilling(string stedA, string stedB, Taxa taxa)
+        private Kunde Find(string brugerNavn)
         {
-            string nrPlade = taxa.nrPlade;
+            Kunde svar = null;
+            int i = 0;
+            while(i < listKunder.Count)
+            {
+                Kunde kunde = listKunder[i];
+                if(kunde.brugerNavn == brugerNavn)
+                {
+                    svar = kunde;
+                }
+                i++;
+            }
+
+            return svar;
         }
 
+        private Chauffør Find(Taxa tildeltTaxa)
+        {
+            Chauffør svar = null;
+            int i = 0;
+            while(i < listChauffører.Count)
+            {
+                Chauffør chauffør = listChauffører[i];
+                if(chauffør.tildeltTaxa == tildeltTaxa)
+                {
+                    svar = chauffør;
+                }
+                i++;
+            }
+            return svar;
+        }
     }
 }
