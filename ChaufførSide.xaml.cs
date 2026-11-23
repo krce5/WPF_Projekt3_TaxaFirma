@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -41,13 +42,32 @@ namespace WPF_Projekt3_TaxaFirma
         {
             // Finder den loggede chauffør og ændrer start-status til true.
             bool ændreStatus = taxafirma.ÆndreStatusStartVagt(brugerNavn);
+            Stopwatch startTid = taxafirma.FindStopwatch(brugerNavn);
             if (ændreStatus == true)
             {
                 TxtBoxStatus.Text = "Du har startet din vagt: " + ændreStatus;
+                startTid.Start();
+                
             }
             else
             {
                 TxtBoxStatus.Text = "Din vagt er afsluttet: " + ændreStatus;
+                startTid.Stop();
+                TxtSeTiden.Text = startTid.Elapsed.ToString(@"hh\:mm\:ss");
+                startTid.Reset();
+                TxtBoxStatus.Text = "Din vagt er afsluttet";
+                
+            }
+
+        }
+
+        private void SeTidNu_Click(object sender, RoutedEventArgs e)
+        {
+            Stopwatch arbejdstid = taxafirma.FindStopwatch(brugerNavn);
+
+            if (arbejdstid != null)
+            {
+                TxtSeTiden.Text = arbejdstid.Elapsed.ToString(@"hh\:mm\:ss");
             }
         }
 
@@ -79,9 +99,5 @@ namespace WPF_Projekt3_TaxaFirma
             }
         }
 
-        private void KnapAfslutVagt_Click(object sender, RoutedEventArgs e)
-        {
-            
-        }
     }
 }

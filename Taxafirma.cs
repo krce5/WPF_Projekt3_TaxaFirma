@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Text;
 
 namespace WPF_Projekt3_TaxaFirma
@@ -180,6 +181,23 @@ namespace WPF_Projekt3_TaxaFirma
                         svar = false;
                     }
                 }
+                i++;
+            }
+            return svar;
+        }
+
+        public Stopwatch FindStopwatch (string brugerNavn)
+        {
+            Stopwatch svar = null;
+            int i = 0;
+            while(i < listChauffører.Count)
+            {
+                Chauffør ch = listChauffører[i];
+                if(brugerNavn == ch.brugerNavn)
+                {
+                    svar = ch.stopwatch;
+                }
+
                 i++;
             }
             return svar;

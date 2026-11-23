@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Text;
 
 namespace WPF_Projekt3_TaxaFirma
@@ -18,5 +19,7 @@ namespace WPF_Projekt3_TaxaFirma
         public double arbejdstid;
 
         public Taxa tildeltTaxa;
+        public Stopwatch stopwatch = new Stopwatch();
+        public double tid;
     }
 }
