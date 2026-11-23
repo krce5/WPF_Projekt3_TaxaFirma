@@ -60,7 +60,7 @@ namespace WPF_Projekt3_TaxaFirma
             if(logindGodkendtKunde)
             {
                 TxtBoxBesked.Text = "Yupiiiii!";
-                KundeBestilling kundeSide = new KundeBestilling();
+                KundeBestilling kundeSide = new KundeBestilling(taxafirma);
                 kundeSide.Show();
                 this.Close();
             }

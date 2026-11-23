@@ -13,9 +13,6 @@ namespace WPF_Projekt3_TaxaFirma
         public bool erLedig = true;
         public bool pause = false;
         public bool start = false;
-
-        public List<Taxa> listChTaxaer = new List<Taxa>();
-
         public double arbejdstid;
 
         public Taxa tildeltTaxa;

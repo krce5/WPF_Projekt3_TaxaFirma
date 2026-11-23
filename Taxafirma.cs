@@ -12,6 +12,8 @@ namespace WPF_Projekt3_TaxaFirma
         public List<Taxa> listTaxaer = new List<Taxa>();
 
         public List<Chauffør> listChauffører = new List<Chauffør>();
+
+        public List<Bestilling> listBestillinger = new List<Bestilling>();
   
         public bool FindKunde(string brugerNavn, string adgangskode)
         {
@@ -201,6 +203,18 @@ namespace WPF_Projekt3_TaxaFirma
                 i++;
             }
             return svar;
+        }
+
+        public void GemRuten(string stedA, string stedB)
+        {
+            Bestilling b1 = new Bestilling();
+            b1.A = stedA;
+            b1.B = stedB;
+        }
+
+        public void OpretBestilling(string stedA, string stedB, Taxa taxa)
+        {
+            string nrPlade = taxa.nrPlade;
         }
 
     }

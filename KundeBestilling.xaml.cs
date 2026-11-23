@@ -20,11 +20,10 @@ namespace WPF_Projekt3_TaxaFirma
     {
         Taxafirma taxafirma = new Taxafirma();
         
-        
-        public KundeBestilling()
+        public KundeBestilling(Taxafirma taxafirma)
         {
             InitializeComponent();
-            
+            this.taxafirma = taxafirma;
         }
 
         private void KnapFindTaxa_Click(object sender, RoutedEventArgs e)
@@ -49,6 +48,14 @@ namespace WPF_Projekt3_TaxaFirma
             {
                 LblBesked.Content = "Denne taxa er ikke ledig";
             }
+
+            string stedA = TxtBoxStedA.Text;
+            string stedB = TxtBoxStedB.Text;
+            Taxa nummerplade = (Taxa)ListBoxLedigTaxa.SelectedItem;
+            taxafirma.GemRuten(stedA, stedB);
+            Test.Content = nummerplade;
+            Console.WriteLine();
+
 
         }
 
