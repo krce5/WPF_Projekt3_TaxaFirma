@@ -8,7 +8,9 @@ namespace WPF_Projekt3_TaxaFirma
     {
         public string A;
         public string B;
+        public int bestillingsNr;
         public Chauffør Ch;
-        public Taxa NrPlade;
+        public Kunde kunde;
+        public Taxa Taxa;
     }
 }

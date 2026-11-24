@@ -56,11 +56,11 @@ namespace WPF_Projekt3_TaxaFirma
             //string kode = TxtBoxAdgangskode.Text;
             bool logindGodkendtKunde = taxafirma.FindKunde(TxtBoxBrugernavn.Text, TxtBoxAdgangskode.Text);
             bool loginGodkendtCh = taxafirma.FindChauffør(TxtBoxBrugernavn.Text, TxtBoxAdgangskode.Text);
-
+            string brugerKunde = TxtBoxBrugernavn.Text;
             if(logindGodkendtKunde)
             {
                 TxtBoxBesked.Text = "Yupiiiii!";
-                KundeBestilling kundeSide = new KundeBestilling(taxafirma);
+                KundeBestilling kundeSide = new KundeBestilling(taxafirma, brugerKunde);
                 kundeSide.Show();
                 this.Close();
             }

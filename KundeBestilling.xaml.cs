@@ -19,11 +19,13 @@ namespace WPF_Projekt3_TaxaFirma
     public partial class KundeBestilling : Window
     {
         Taxafirma taxafirma = new Taxafirma();
-        
-        public KundeBestilling(Taxafirma taxafirma)
+        private string brugerNavnKunde = "";
+
+        public KundeBestilling(Taxafirma taxafirma, string brugerNavnKunde)
         {
             InitializeComponent();
             this.taxafirma = taxafirma;
+            this.brugerNavnKunde = brugerNavnKunde;
         }
 
         private void KnapFindTaxa_Click(object sender, RoutedEventArgs e)
@@ -34,29 +36,39 @@ namespace WPF_Projekt3_TaxaFirma
         private void KnapBestil_Click(object sender, RoutedEventArgs e)
         {
             Taxa valgt = (Taxa)ListBoxLedigTaxa.SelectedItem;
-            bool svar = taxafirma.FindTaxa(valgt);
-           // string nrnr = taxafirma.FindTaxaNrplade();
-            if (svar)
+            Bestilling bestilling;
+            string stedA = TxtBoxStedA.Text;
+            string stedB = TxtBoxStedB.Text;
+            string brugerKunde = brugerNavnKunde;
+            // string nrnr = taxafirma.FindTaxaNrplade();
+            if (valgt != null)
             {
-                
-                valgt.erLedig = false;
-                ListBoxLedigTaxa.ItemsSource = null;
-                ListBoxLedigTaxa.ItemsSource = taxafirma.listTaxaer;
-                LblBesked.Content = "du har bestilt denne taxa";
+                bool svar = taxafirma.FindTaxa(valgt);
+                if (svar)
+                {
+                    bestilling = taxafirma.OpretBestilling(brugerKunde, valgt, stedA, stedB);
+                    valgt.erLedig = false;
+                    ListBoxLedigTaxa.ItemsSource = null;
+                    ListBoxLedigTaxa.ItemsSource = taxafirma.listTaxaer;
+                    LblBesked.Content = "Du har bestilt en taxa med nummerplade: " + valgt.nrPlade;
+                    TxtBestillingsOversigt.Text =
+                        "BestillingsNr: " + bestilling.bestillingsNr + "\n" +
+                        "Fra: " + bestilling.A + "\n" +
+                        "Til: " + bestilling.B + "\n" +
+                        "Kundenavn: " + bestilling.kunde.brugerNavn + "\n" +
+                        "Med bil: " + bestilling.Taxa.nrPlade + "\n" +
+                        "Din chauffør: " + bestilling.Ch.brugerNavn;
+                }
+                else
+                {
+                    LblBesked.Content = "FEJL! Denne taxa er ikke ledig.";
+                }
             }
             else
             {
-                LblBesked.Content = "Denne taxa er ikke ledig";
+                LblBesked.Content = "FEJL! Husk at vælge en taxa først.";
             }
-
-            string stedA = TxtBoxStedA.Text;
-            string stedB = TxtBoxStedB.Text;
-            Taxa nummerplade = (Taxa)ListBoxLedigTaxa.SelectedItem;
-            taxafirma.GemRuten(stedA, stedB);
-            Test.Content = nummerplade;
-            Console.WriteLine();
-
-
+           
         }
 
         private void ListBoxLedigTaxa_SelectionChanged(object sender, SelectionChangedEventArgs e)
