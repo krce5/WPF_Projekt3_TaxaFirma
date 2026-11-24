@@ -60,6 +60,8 @@ namespace WPF_Projekt3_TaxaFirma
                             "Kundenavn: " + bestilling.kunde.brugerNavn + "\n" +
                             "Med bil: " + bestilling.Taxa.nrPlade + "\n" +
                             "Din chauffør: " + bestilling.Ch.brugerNavn;
+
+                        taxafirma.GemBestillingSomTxt(bestilling); //vi kalder metoden for at gemme bestillingen i .txt filen
                     }
                     else
                     {
@@ -94,6 +96,18 @@ namespace WPF_Projekt3_TaxaFirma
                     LblSvar.Content = "Denne Taxa er ikke ledig: " + valgt.nrPlade;
 
                 }
+            }
+        }
+
+        private void KnapLoggeUd_Click(object sender, RoutedEventArgs e) //genbruge til chaufførside
+        {
+          
+            string brugerKunde = brugerNavnKunde;
+            if (true)
+            {
+                MainWindow mainWindow = new MainWindow();
+                mainWindow.Show();
+                this.Close();
             }
         }
     }

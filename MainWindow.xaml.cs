@@ -82,6 +82,11 @@ namespace WPF_Projekt3_TaxaFirma
 
 
                 chaufførSide.LblNrPlade.Content = "Du skal kører med " + nrplade;
+
+
+                //få adgang til og udskriv de gemte bestillinger fra .txt filen
+                string[] læsBestilling = System.IO.File.ReadAllLines(@"gemteBestillinger.txt");
+                chaufførSide.ListBoxBestillinger.ItemsSource = læsBestilling;
             }
             else
             {

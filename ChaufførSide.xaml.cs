@@ -99,5 +99,9 @@ namespace WPF_Projekt3_TaxaFirma
             }
         }
 
+        private void TxtSeTiden_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }

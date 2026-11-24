@@ -18,6 +18,7 @@
         <Label x:Name="LblSvar" Content="" HorizontalAlignment="Left" Margin="492,274,0,0" VerticalAlignment="Top" Height="52" Width="255"/>
         <Label x:Name="Test" Content="" HorizontalAlignment="Left" Height="61" Margin="255,67,0,0" VerticalAlignment="Top" Width="205"/>
         <TextBox x:Name="TxtBestillingsOversigt" HorizontalAlignment="Left" Margin="135,18,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="251" Height="125"/>
+        <Button x:Name="KnapLoggeUd" Content="Logge Ud" HorizontalAlignment="Left" Margin="734,10,0,0" VerticalAlignment="Top" Click="KnapLoggeUd_Click"/>
 
     </Grid>
 </Window>

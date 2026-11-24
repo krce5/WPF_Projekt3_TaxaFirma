@@ -12,10 +12,12 @@
         <Button x:Name="KnapStartVagt" Content="Start / Afslut Vagt" HorizontalAlignment="Left" Margin="48,330,0,0" VerticalAlignment="Top" Height="36" Width="97" Click="KnapStartVagt_Click"/>
         <Button x:Name="KnapLedighed" Content="Ledig / Ikke Ledig" HorizontalAlignment="Left" Margin="209,330,0,0" VerticalAlignment="Top" Height="36" Width="115" Click="KnapLedighed_Click"/>
         <Button x:Name="KnapPause" Content="Start / Slut Pause" HorizontalAlignment="Left" Margin="378,330,0,0" VerticalAlignment="Top" Height="36" Width="116" Click="KnapPause_Click"/>
-        <Label x:Name="LblVelkommen" Content="Velkommen" HorizontalAlignment="Left" Margin="33,67,0,0" VerticalAlignment="Top" Width="233"/>
-        <Label x:Name="LblNrPlade" Content="I dag skal du køre med: " HorizontalAlignment="Left" Margin="33,114,0,0" VerticalAlignment="Top" Width="180"/>
-        <Button x:Name="SeTidNu" Content="Se min arbejdstid" HorizontalAlignment="Left" Margin="436,217,0,0" VerticalAlignment="Top" Height="45" Width="118" Click="SeTidNu_Click"/>
-        <TextBox x:Name="TxtSeTiden" HorizontalAlignment="Left" Height="45" Margin="570,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="149"/>
+        <Label x:Name="LblVelkommen" Content="Velkommen" HorizontalAlignment="Left" Margin="33,28,0,0" VerticalAlignment="Top" Width="233"/>
+        <Label x:Name="LblNrPlade" Content="I dag skal du køre med: " HorizontalAlignment="Left" Margin="33,59,0,0" VerticalAlignment="Top" Width="180"/>
+        <Button x:Name="SeTidNu" Content="Se min arbejdstid" HorizontalAlignment="Left" Margin="436,254,0,0" VerticalAlignment="Top" Height="45" Width="118" Click="SeTidNu_Click"/>
+        <TextBox x:Name="TxtSeTiden" HorizontalAlignment="Left" Height="45" Margin="570,254,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="149" TextChanged="TxtSeTiden_TextChanged"/>
+        <Label Content="Din bestilling:" HorizontalAlignment="Left" Margin="33,90,0,0" VerticalAlignment="Top" Width="224"/>
+        <ListBox x:Name="ListBoxBestillinger" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="33,121,383,202"/>
 
     </Grid>
 </Window>

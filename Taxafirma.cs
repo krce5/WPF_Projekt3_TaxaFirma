@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
+using System.IO;
 
 namespace WPF_Projekt3_TaxaFirma
 {
@@ -260,6 +261,22 @@ namespace WPF_Projekt3_TaxaFirma
                 i++;
             }
             return svar;
+        }
+
+        public void GemBestillingSomTxt(Bestilling bestilling)
+        {
+            string filsti = Path.Combine(AppContext.BaseDirectory, "gemteBestillinger.txt"); //Fortæller hvor filen skal gemmes
+
+            string tekst =  //fortælleer hvad der skal gemmes i filen
+                "Bestillingsnr: " + bestilling.bestillingsNr + Environment.NewLine +
+                "Fra: " + bestilling.A + Environment.NewLine +
+                "Til: " + bestilling.B + Environment.NewLine +
+                "Kundenavn: " + bestilling.kunde.brugerNavn + Environment.NewLine +
+                "Med bil: " + bestilling.Taxa.nrPlade + Environment.NewLine +
+                "Chauffør: " + bestilling.Ch.brugerNavn + Environment.NewLine +
+                "---------------------------------------" + Environment.NewLine;
+            File.AppendAllText(filsti, tekst, Encoding.UTF8); //Encoding - så særlige bogstaver på dansk kan fungere
+
         }
     }
 }
