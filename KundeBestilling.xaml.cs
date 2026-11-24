@@ -43,25 +43,32 @@ namespace WPF_Projekt3_TaxaFirma
             // string nrnr = taxafirma.FindTaxaNrplade();
             if (valgt != null)
             {
-                bool svar = taxafirma.FindTaxa(valgt);
-                if (svar)
+                if (stedA != "" && stedB != "")
                 {
-                    bestilling = taxafirma.OpretBestilling(brugerKunde, valgt, stedA, stedB);
-                    valgt.erLedig = false;
-                    ListBoxLedigTaxa.ItemsSource = null;
-                    ListBoxLedigTaxa.ItemsSource = taxafirma.listTaxaer;
-                    LblBesked.Content = "Du har bestilt en taxa med nummerplade: " + valgt.nrPlade;
-                    TxtBestillingsOversigt.Text =
-                        "BestillingsNr: " + bestilling.bestillingsNr + "\n" +
-                        "Fra: " + bestilling.A + "\n" +
-                        "Til: " + bestilling.B + "\n" +
-                        "Kundenavn: " + bestilling.kunde.brugerNavn + "\n" +
-                        "Med bil: " + bestilling.Taxa.nrPlade + "\n" +
-                        "Din chauffør: " + bestilling.Ch.brugerNavn;
+                    bool svar = taxafirma.FindTaxa(valgt);
+                    if (svar)
+                    {
+                        bestilling = taxafirma.OpretBestilling(brugerKunde, valgt, stedA, stedB);
+                        valgt.erLedig = false;
+                        ListBoxLedigTaxa.ItemsSource = null;
+                        ListBoxLedigTaxa.ItemsSource = taxafirma.listTaxaer;
+                        LblBesked.Content = "Du har bestilt en taxa med nummerplade: " + valgt.nrPlade;
+                        TxtBestillingsOversigt.Text =
+                            "BestillingsNr: " + bestilling.bestillingsNr + "\n" +
+                            "Fra: " + bestilling.A + "\n" +
+                            "Til: " + bestilling.B + "\n" +
+                            "Kundenavn: " + bestilling.kunde.brugerNavn + "\n" +
+                            "Med bil: " + bestilling.Taxa.nrPlade + "\n" +
+                            "Din chauffør: " + bestilling.Ch.brugerNavn;
+                    }
+                    else
+                    {
+                        LblBesked.Content = "FEJL! Denne taxa er ikke ledig.";
+                    }
                 }
                 else
                 {
-                    LblBesked.Content = "FEJL! Denne taxa er ikke ledig.";
+                    LblBesked.Content = "FEJL! Husk at skrive addressen.";
                 }
             }
             else
