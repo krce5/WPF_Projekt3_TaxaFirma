@@ -50,6 +50,9 @@ namespace WPF_Projekt3_TaxaFirma
             taxafirma.listChauffører.Add(ch3);
             taxafirma.listChauffører.Add(ch4);
 
+            Taxaoperatør op1 = new Taxaoperatør { brugerNavn = "Lise", adgangskode = "789" };
+            taxafirma.listTaxaoperatør.Add(op1);
+
 
 
         }
@@ -60,6 +63,7 @@ namespace WPF_Projekt3_TaxaFirma
             //string kode = TxtBoxAdgangskode.Text;
             bool logindGodkendtKunde = taxafirma.FindKunde(TxtBoxBrugernavn.Text, TxtBoxAdgangskode.Text);
             bool loginGodkendtCh = taxafirma.FindChauffør(TxtBoxBrugernavn.Text, TxtBoxAdgangskode.Text);
+            bool loginGodkendtOp = taxafirma.FindOperatør(TxtBoxBrugernavn.Text, TxtBoxAdgangskode.Text);
             string brugerKunde = TxtBoxBrugernavn.Text;
             if(logindGodkendtKunde)
             {
@@ -87,6 +91,21 @@ namespace WPF_Projekt3_TaxaFirma
                 //få adgang til og udskriv de gemte bestillinger fra .txt filen
                 string[] læsBestilling = System.IO.File.ReadAllLines(@"gemteBestillinger.txt");
                 chaufførSide.ListBoxBestillinger.ItemsSource = læsBestilling;
+            }
+            else if(loginGodkendtOp)
+            {
+                OperatørSide operatørSide = new OperatørSide(taxafirma, TxtBoxBrugernavn.Text);
+                operatørSide.Show();
+                this.Close();
+                operatørSide.LblVelkommen.Content = "Velkommen " + TxtBoxBrugernavn.Text;
+
+                operatørSide.ListBoxChauffører.ItemsSource = taxafirma.listChauffører;
+                operatørSide.ListBoxTaxaer.ItemsSource = taxafirma.listTaxaer;
+                operatørSide.ListBoxBestillinger.ItemsSource = taxafirma.listBestillinger;
+
+                string[] læsBestilling = System.IO.File.ReadAllLines(@"gemteBestillinger.txt");
+                operatørSide.ListBoxBestillinger.ItemsSource = læsBestilling;
+
             }
             else
             {

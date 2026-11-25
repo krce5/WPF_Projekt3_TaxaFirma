@@ -18,6 +18,7 @@
         <TextBox x:Name="TxtSeTiden" HorizontalAlignment="Left" Height="45" Margin="570,254,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="149"/>
         <Label Content="Din bestilling:" HorizontalAlignment="Left" Margin="33,90,0,0" VerticalAlignment="Top" Width="224"/>
         <ListBox x:Name="ListBoxBestillinger" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="33,121,383,202"/>
+        <Button x:Name="KnapLoggeUd" Content="Logge Ud" HorizontalAlignment="Left" Margin="679,13,0,0" VerticalAlignment="Top" Width="64" Click="KnapLoggeUd_Click"/>
 
     </Grid>
 </Window>

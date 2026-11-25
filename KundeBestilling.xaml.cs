@@ -15,7 +15,7 @@ namespace WPF_Projekt3_TaxaFirma
     /// <summary>
     /// Interaction logic for KundeBestilling.xaml
     /// </summary>
-    
+
     public partial class KundeBestilling : Window
     {
         private Taxafirma taxafirma;
@@ -77,16 +77,16 @@ namespace WPF_Projekt3_TaxaFirma
             {
                 LblBesked.Content = "FEJL! Husk at vælge en taxa først.";
             }
-           
+
         }
 
         private void ListBoxLedigTaxa_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             Taxa valgt = (Taxa)ListBoxLedigTaxa.SelectedItem;
-            if(valgt != null)
+            if (valgt != null)
             {
-               // ListBoxLedigTaxa.ItemsSource = null;
-               // ListBoxLedigTaxa.ItemsSource = taxafirma.listTaxaer;
+                // ListBoxLedigTaxa.ItemsSource = null;
+                // ListBoxLedigTaxa.ItemsSource = taxafirma.listTaxaer;
                 if (valgt.erLedig == true)
                 {
                     LblSvar.Content = "Du har valgt: " + valgt.nrPlade;
@@ -101,14 +101,11 @@ namespace WPF_Projekt3_TaxaFirma
 
         private void KnapLoggeUd_Click(object sender, RoutedEventArgs e) //genbruge til chaufførside
         {
-          
-            string brugerKunde = brugerNavnKunde;
-            if (true)
-            {
-                MainWindow mainWindow = new MainWindow();
-                mainWindow.Show();
-                this.Close();
-            }
+
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            this.Close();
+
         }
     }
 }

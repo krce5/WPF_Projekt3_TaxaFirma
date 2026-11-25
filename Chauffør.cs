@@ -18,5 +18,12 @@ namespace WPF_Projekt3_TaxaFirma
         public Taxa tildeltTaxa;
         public Stopwatch stopwatch = new Stopwatch();
         public double tid;
+        public override string ToString()
+        {
+            return brugerNavn + " mødt på arbejde: " + start + "\n" +
+                     "ledighed: " + erLedig + ", pause: " + pause + "\n" + 
+                     "bil: " + tildeltTaxa.nrPlade + "\n" +
+                     "----------------";
+        }
     }
 }

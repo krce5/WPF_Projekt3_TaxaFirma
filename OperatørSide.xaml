@@ -1,0 +1,18 @@
+﻿<Window x:Class="WPF_Projekt3_TaxaFirma.OperatørSide"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_Projekt3_TaxaFirma"
+        mc:Ignorable="d"
+        Title="OperatørSide" Height="450" Width="800">
+    <Grid>
+        <Label x:Name="LblVelkommen" Content="" HorizontalAlignment="Left" Margin="19,37,0,0" VerticalAlignment="Top" Width="171"/>
+        <ListBox x:Name="ListBoxChauffører" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="19,101,550,89"/>
+        <ListBox x:Name="ListBoxTaxaer" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="284,101,284,89"/>
+        <ListBox x:Name="ListBoxBestillinger" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="542,101,26,89"/>
+        <Button x:Name="KnapLoggeUd" Content="Logge ud" HorizontalAlignment="Left" Margin="707,22,0,0" VerticalAlignment="Top" Width="67" Click="LoggeUd_Knap_Click"/>
+        <Button x:Name="KnapSkiftTaxa" Content="Skift Taxa" HorizontalAlignment="Left" Margin="19,367,0,0" VerticalAlignment="Top" Width="115" Height="34" Click="KnapSkiftTaxa_Click"/>
+
+    </Grid>
+</Window>
