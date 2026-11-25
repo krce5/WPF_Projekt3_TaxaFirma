@@ -18,7 +18,7 @@ namespace WPF_Projekt3_TaxaFirma
     /// </summary>
     public partial class ChaufførSide : Window
     {
-        private Taxafirma taxafirma = new Taxafirma();
+        private Taxafirma taxafirma;
         private string brugerNavn = "";
 
         // Standard-constructoren bruges til at oprette chaufførvinduet uden ekstra oplysninger.
@@ -99,9 +99,5 @@ namespace WPF_Projekt3_TaxaFirma
             }
         }
 
-        private void TxtSeTiden_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
     }
 }
