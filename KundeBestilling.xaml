@@ -16,9 +16,8 @@
         <Label x:Name="LblBesked" Content="" HorizontalAlignment="Left" Margin="453,102,0,0" VerticalAlignment="Top" Width="245"/>
         <ListBox x:Name="ListBoxLedigTaxa" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="135,241,340,24" SelectionChanged="ListBoxLedigTaxa_SelectionChanged"/>
         <Label x:Name="LblSvar" Content="" HorizontalAlignment="Left" Margin="492,274,0,0" VerticalAlignment="Top" Height="52" Width="255"/>
-        <Label x:Name="Test" Content="" HorizontalAlignment="Left" Height="61" Margin="255,67,0,0" VerticalAlignment="Top" Width="205"/>
         <TextBox x:Name="TxtBestillingsOversigt" HorizontalAlignment="Left" Margin="135,18,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="251" Height="125"/>
-        <Button x:Name="KnapLoggeUd" Content="Logge Ud" HorizontalAlignment="Left" Margin="734,10,0,0" VerticalAlignment="Top" Click="KnapLoggeUd_Click"/>
+        <Button x:Name="KnapLoggeUd" Content="Logge Ud" HorizontalAlignment="Left" Margin="706,18,0,0" VerticalAlignment="Top" Click="KnapLoggeUd_Click"/>
 
     </Grid>
 </Window>

@@ -18,7 +18,7 @@ namespace WPF_Projekt3_TaxaFirma
     
     public partial class KundeBestilling : Window
     {
-        Taxafirma taxafirma = new Taxafirma();
+        private Taxafirma taxafirma;
         private string brugerNavnKunde = "";
 
         public KundeBestilling(Taxafirma taxafirma, string brugerNavnKunde)

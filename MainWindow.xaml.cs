@@ -32,7 +32,7 @@ namespace WPF_Projekt3_TaxaFirma
             taxafirma.listKunder.Add(k2);
  
             Taxa t1 = new Taxa { erLedig = true, nrPlade = "AB 12 345" };
-            Taxa t2 = new Taxa { erLedig = false, nrPlade = "EB 32 154" };
+            Taxa t2 = new Taxa { erLedig = false, nrPlade = "EB 35 196" };
             Taxa t3 = new Taxa { erLedig = true, nrPlade = "XT 42 174" };
             Taxa t4 = new Taxa { erLedig = false, nrPlade = "AY 56 894" };
             taxafirma.listTaxaer.Add(t1);
@@ -42,8 +42,8 @@ namespace WPF_Projekt3_TaxaFirma
 
 
             Chauffør ch1 = new Chauffør { brugerNavn = "Bob", adgangskode = "123", tildeltTaxa = t1};
-            Chauffør ch2 = new Chauffør { brugerNavn = "Mogens", adgangskode = "321", tildeltTaxa = t2};
-            Chauffør ch3 = new Chauffør { brugerNavn = "Morten", adgangskode = "456", tildeltTaxa = t3 };
+            Chauffør ch2 = new Chauffør { brugerNavn = "Mogens", adgangskode = "321", tildeltTaxa = t3};
+            Chauffør ch3 = new Chauffør { brugerNavn = "Jakob", adgangskode = "456", tildeltTaxa = t2 };
             Chauffør ch4 = new Chauffør { brugerNavn = "Penny", adgangskode = "456", tildeltTaxa = t4 };
             taxafirma.listChauffører.Add(ch1);
             taxafirma.listChauffører.Add(ch2);
