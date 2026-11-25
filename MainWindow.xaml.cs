@@ -52,9 +52,6 @@ namespace WPF_Projekt3_TaxaFirma
 
             Taxaoperatør op1 = new Taxaoperatør { brugerNavn = "Lise", adgangskode = "789" };
             taxafirma.listTaxaoperatør.Add(op1);
-
-
-
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -67,15 +64,12 @@ namespace WPF_Projekt3_TaxaFirma
             string brugerKunde = TxtBoxBrugernavn.Text;
             if(logindGodkendtKunde)
             {
-                TxtBoxBesked.Text = "Yupiiiii!";
                 KundeBestilling kundeSide = new KundeBestilling(taxafirma, brugerKunde);
                 kundeSide.Show();
                 this.Close();
             }
             else if(loginGodkendtCh)
             {
-
-                TxtBoxBesked.Text = "Yupiiiii!";
                 // Sender det eksisterende taxafirma og chaufførens brugernavn til chaufførvinduet.
                 ChaufførSide chaufførSide = new ChaufførSide(taxafirma, TxtBoxBrugernavn.Text);
                 chaufførSide.Show();
@@ -109,7 +103,7 @@ namespace WPF_Projekt3_TaxaFirma
             }
             else
             {
-                TxtBoxBesked.Text = "Puuuhhaaaa :(";
+                LblBesked.Content = "Puuuhhaaaa :(";
             }
         }
     }
