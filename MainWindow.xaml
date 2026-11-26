@@ -5,14 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF_Projekt3_TaxaFirma"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="550" Width="800">
+    <Window.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="#f6b0a5" Offset="0"/>
+            <GradientStop Color="#F5A4E0" Offset="1"/>
+        </LinearGradientBrush>
+    </Window.Background>
     <Grid>
-        <Button x:Name="KnapLogind" Content="Logind" HorizontalAlignment="Center" Margin="0,239,0,0" VerticalAlignment="Top" Click="Button_Click" Width="128"/>
-        <TextBox x:Name="TxtBoxBrugernavn" HorizontalAlignment="Left" Margin="336,100,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Height="34"/>
-        <TextBox x:Name="TxtBoxAdgangskode" HorizontalAlignment="Left" Margin="336,160,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Height="30"/>
-        <Label Content="Brugernavn" HorizontalAlignment="Left" Margin="336,74,0,0" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Adgangskode" HorizontalAlignment="Center" Margin="0,134,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.503,0.528" Width="128"/>
-        <TextBox x:Name="TxtBoxBesked" HorizontalAlignment="Left" Margin="540,54,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="KnapLogind" Content="Logind" Background="#BA55D3" Foreground="White" HorizontalAlignment="Center" Margin="0,347,0,0" VerticalAlignment="Top" Click="Button_Click" Width="156" Height="35"/>
+        <TextBox x:Name="TxtBoxBrugernavn" HorizontalAlignment="Center" Margin="0,218,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="156" Height="34"/>
+        <TextBox x:Name="TxtBoxAdgangskode" HorizontalAlignment="Center" Margin="0,283,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="156" Height="30"/>
+        <Label Content="Brugernavn" HorizontalAlignment="Left" Margin="322,193,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Adgangskode" HorizontalAlignment="Left" Margin="322,258,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="LblBesked" Content="" HorizontalAlignment="Center" Margin="0,318,0,0" VerticalAlignment="Top" Width="156" Height="29" Foreground="Red" />
+        <Image Source="Images/logo.png"  HorizontalAlignment="Center" Height="100" Margin="0,62,0,0" VerticalAlignment="Top" Width="270"/>
+        <Image Source="/Images/støt.png" HorizontalAlignment="Left" Height="136" Margin="38,364,0,0" VerticalAlignment="Top" Width="177"/>
 
     </Grid>
 </Window>

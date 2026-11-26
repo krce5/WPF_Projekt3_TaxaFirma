@@ -5,14 +5,50 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF_Projekt3_TaxaFirma"
         mc:Ignorable="d"
-        Title="OperatørSide" Height="450" Width="800">
+        Title="OperatørSide" Height="550" Width="1000">
     <Grid>
-        <Label x:Name="LblVelkommen" Content="" HorizontalAlignment="Left" Margin="19,37,0,0" VerticalAlignment="Top" Width="171"/>
-        <ListBox x:Name="ListBoxChauffører" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="19,101,550,89"/>
-        <ListBox x:Name="ListBoxTaxaer" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="284,101,284,89"/>
-        <ListBox x:Name="ListBoxBestillinger" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="542,101,26,89"/>
-        <Button x:Name="KnapLoggeUd" Content="Logge ud" HorizontalAlignment="Left" Margin="707,22,0,0" VerticalAlignment="Top" Width="67" Click="LoggeUd_Knap_Click"/>
-        <Button x:Name="KnapSkiftTaxa" Content="Skift Taxa" HorizontalAlignment="Left" Margin="19,367,0,0" VerticalAlignment="Top" Width="115" Height="34" Click="KnapSkiftTaxa_Click"/>
+        <Rectangle HorizontalAlignment="Center" Height="72" Fill="#645D68" Stroke="#645D68" VerticalAlignment="Top" Width="1000">
+            <Rectangle.Effect>
+                <DropShadowEffect
+         BlurRadius="8"
+         ShadowDepth="2"
+         Opacity="0.3"/>
+            </Rectangle.Effect>
+        </Rectangle>
+        <Rectangle HorizontalAlignment="Left" Height="356" Margin="23,110,0,0" VerticalAlignment="Top" Width="306">
+            <Rectangle.Fill>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#F6EEF3" Offset="0"/>
+                    <GradientStop Color="#E8DDEB" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle HorizontalAlignment="Left" Height="356" Margin="342,110,0,0" VerticalAlignment="Top" Width="306">
+            <Rectangle.Fill>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#F6EEF3" Offset="0"/>
+                    <GradientStop Color="#E8DDEB" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle HorizontalAlignment="Left" Height="356" Margin="664,110,0,0" VerticalAlignment="Top" Width="306">
+            <Rectangle.Fill>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#F6EEF3" Offset="0"/>
+                    <GradientStop Color="#E8DDEB" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Image Source="Images/logo.png" HorizontalAlignment="Left" Height="54" Margin="23,9,0,0" VerticalAlignment="Top" Width="168"/>
+        <ListBox x:Name="ListBoxChauffører" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="36,155,691,89"/>
+        <ListBox x:Name="ListBoxTaxaer" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="352,155,363,89"/>
+        <ListBox x:Name="ListBoxBestillinger" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="675,155,40,89"/>
+        <Button x:Name="KnapLoggeUd" Content="Logge ud" HorizontalAlignment="Left" Margin="852,22,0,0" VerticalAlignment="Top" Width="105" Click="LoggeUd_Knap_Click"/>
+        <Button x:Name="KnapSkiftTaxa" Background="#BA55D3" Foreground="White" Content="Skift Taxa" HorizontalAlignment="Left" Margin="23,480,0,0" VerticalAlignment="Top" Width="115" Height="34" Click="KnapSkiftTaxa_Click"/>
+        <Label Content="Chauffører" HorizontalAlignment="Left" Margin="36,124,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <Label Content="Taxaer" HorizontalAlignment="Left" Margin="352,124,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <Label Content="Bestillinger" HorizontalAlignment="Left" Margin="675,124,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <Label x:Name="LblVelkommen" Content="Velkommen bruger" HorizontalAlignment="Left" Margin="23,77,0,0" VerticalAlignment="Top" FontSize="16"/>
 
     </Grid>
 </Window>
