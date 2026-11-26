@@ -17,6 +17,11 @@
         </Rectangle>
         <Image Source="Images/logo.png" HorizontalAlignment="Left" Height="54" Margin="23,9,0,0" VerticalAlignment="Top" Width="168"/>
         <Button x:Name="KnapTilbage" Content="Tilbage" HorizontalAlignment="Left" Margin="43,94,0,0" VerticalAlignment="Top" Click="KnapTilbage_Click"/>
+        <ListBox x:Name="ListboxTaxaUdenCH" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="43,165,763,23"/>
+        <ListBox x:Name="ListboxChauffør" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="306,165,500,23"/>
+        <ListBox x:Name="ListboxTaxaTildeltChauffør" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="749,165,57,23"/>
+        <Button x:Name="KnapTildelTaxa" Content="Tildel" HorizontalAlignment="Left" Margin="565,267,0,0" VerticalAlignment="Top" Height="51" Width="132"/>
+        <Button x:Name="KnapFradelTaxa" Content="Fradel" HorizontalAlignment="Left" Margin="565,385,0,0" VerticalAlignment="Top" Height="51" Width="132"/>
 
     </Grid>
 </Window>

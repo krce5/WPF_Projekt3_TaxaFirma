@@ -17,6 +17,8 @@ namespace WPF_Projekt3_TaxaFirma
         public List<Bestilling> listBestillinger = new List<Bestilling>();
 
         public List<Taxaoperatør> listTaxaoperatør = new List<Taxaoperatør>();
+        public List<Chauffør> taxaMedChauffør = new List<Chauffør>();
+        public List<Taxa> taxaUdenChauffør = new List<Taxa>();
 
         public bool FindKunde(string brugerNavn, string adgangskode)
         {
@@ -280,6 +282,44 @@ namespace WPF_Projekt3_TaxaFirma
                 i++;
             }
             return svar;
+        }
+
+        public string findChaufførNavn(string brugerNavn)
+        {
+            int i = 0;
+            string svar = "";
+            while (i < listChauffører.Count)
+            {
+                Chauffør cc = listChauffører[i];
+                if (brugerNavn == cc.brugerNavn)
+                {
+                    svar = cc.brugerNavn;
+                    return svar;
+                }
+                i++;
+
+            }
+            return svar;
+        }
+
+        public void findTildelteTaxa()
+        {
+
+        }
+
+        public List<Chauffør> LavListeTaxaMedChauffør()
+        {
+            int i = 0;
+            while(i < listChauffører.Count)
+            {
+                Chauffør cc = listChauffører[i];
+                if(cc.tildeltTaxa != null)
+                {
+                    taxaMedChauffør.Add(listChauffører[i]);
+                }
+                i++;
+            }
+            return taxaMedChauffør;
         }
 
         public void GemBestillingSomTxt(Bestilling bestilling)

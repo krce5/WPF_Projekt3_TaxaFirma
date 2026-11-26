@@ -19,11 +19,19 @@ namespace WPF_Projekt3_TaxaFirma
     {
         private Taxafirma taxafirma;
         private string brugerNavnOperatør = "";
+        
+
+        
+
         public OperatørSkiftTaxaSide(Taxafirma taxafirma, string brugerNavnOperatør)
         {
             InitializeComponent();
             this.taxafirma = taxafirma;
             this.brugerNavnOperatør = brugerNavnOperatør;
+
+
+
+            ListboxTaxaTildeltChauffør.ItemsSource = taxafirma.taxaMedChauffør;
         }
 
         private void KnapTilbage_Click(object sender, RoutedEventArgs e)
