@@ -7,6 +7,30 @@
         mc:Ignorable="d"
         Title="OperatørSkiftTaxaSide" Height="550" Width="1000">
     <Grid>
+        <Rectangle HorizontalAlignment="Left" Height="356" Margin="30,140,0,0" VerticalAlignment="Top" Width="238">
+            <Rectangle.Fill>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#F6EEF3" Offset="0"/>
+                    <GradientStop Color="#E8DDEB" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle HorizontalAlignment="Left" Height="356" Margin="727,140,0,0" VerticalAlignment="Top" Width="238">
+            <Rectangle.Fill>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#F6EEF3" Offset="0"/>
+                    <GradientStop Color="#E8DDEB" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle HorizontalAlignment="Left" Height="356" Margin="286,140,0,0" VerticalAlignment="Top" Width="238">
+            <Rectangle.Fill>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#F6EEF3" Offset="0"/>
+                    <GradientStop Color="#E8DDEB" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
         <Rectangle HorizontalAlignment="Center" Height="72" Fill="#645D68" Stroke="#645D68" VerticalAlignment="Top" Width="1000">
             <Rectangle.Effect>
                 <DropShadowEffect
@@ -16,15 +40,15 @@
             </Rectangle.Effect>
         </Rectangle>
         <Image Source="Images/logo.png" HorizontalAlignment="Left" Height="54" Margin="23,9,0,0" VerticalAlignment="Top" Width="168"/>
-        <Button x:Name="KnapTilbage" Content="Tilbage" HorizontalAlignment="Left" Margin="43,94,0,0" VerticalAlignment="Top" Click="KnapTilbage_Click"/>
-        <ListBox x:Name="ListboxTaxaUdenCH" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="308,165,498,23" SelectionChanged="ListboxTaxaUdenCH_SelectionChanged"/>
-        <ListBox x:Name="ListboxChauffør" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="43,165,763,23"/>
-        <ListBox x:Name="ListboxTaxaTildeltChauffør" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="749,165,57,23"/>
-        <Button x:Name="KnapTildelTaxa" Content="Tildel" HorizontalAlignment="Left" Margin="565,267,0,0" VerticalAlignment="Top" Height="51" Width="132" Click="KnapTildelTaxa_Click"/>
-        <Button x:Name="KnapFradelTaxa" Content="Fradel" HorizontalAlignment="Left" Margin="565,385,0,0" VerticalAlignment="Top" Height="51" Width="132" Click="KnapFradelTaxa_Click"/>
-        <Label Content="Taxa uden chauffører" HorizontalAlignment="Left" Margin="48,140,0,0" VerticalAlignment="Top"/>
-        <Label Content="Chauffører" HorizontalAlignment="Left" Margin="308,140,0,0" VerticalAlignment="Top"/>
-        <Label Content="Taxa med chauffører" HorizontalAlignment="Left" Margin="749,140,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="KnapTilbage" Content="Tilbage" HorizontalAlignment="Left" Margin="30,94,0,0" VerticalAlignment="Top" Click="KnapTilbage_Click"/>
+        <ListBox x:Name="ListBoxChaufførUdenTaxa" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="308,185,498,59"/>
+        <ListBox x:Name="ListBoxTaxaUdenChauffør" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="43,185,763,59"/>
+        <ListBox x:Name="ListBoxChaufførerMedTaxa" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="749,185,57,59"/>
+        <Button x:Name="KnapTildelTaxa" Content="Tildel" HorizontalAlignment="Left" Margin="565,236,0,0" VerticalAlignment="Top" Height="51" Width="132" Click="KnapTildelTaxa_Click"/>
+        <Button x:Name="KnapFradelTaxa" Content="Fradel" HorizontalAlignment="Left" Margin="565,330,0,0" VerticalAlignment="Top" Height="51" Width="132" Click="KnapFradelTaxa_Click"/>
+        <Label Content="Taxaer uden chauffører" HorizontalAlignment="Left" Margin="43,155,0,0" VerticalAlignment="Top" FontSize="16" Width="194"/>
+        <Label Content="Chauffører uden taxa" HorizontalAlignment="Left" Margin="308,155,0,0" VerticalAlignment="Top" FontSize="16" Width="192"/>
+        <Label Content="Chauffører med taxa" HorizontalAlignment="Left" Margin="749,155,0,0" VerticalAlignment="Top" FontSize="16" Width="194"/>
 
     </Grid>
 </Window>

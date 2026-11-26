@@ -21,11 +21,19 @@ namespace WPF_Projekt3_TaxaFirma
         private Taxafirma taxafirma;
         private string brugerNavnKunde = "";
 
+        
+
         public KundeBestilling(Taxafirma taxafirma, string brugerNavnKunde)
         {
             InitializeComponent();
             this.taxafirma = taxafirma;
             this.brugerNavnKunde = brugerNavnKunde;
+
+            TxtBoxPris.Text =
+                "Start gebyr: 49 kr" + "\n" +
+                "Pris per KM: 17,70 kr" + "\n" + 
+                "Pris i minut: 7,50 kr" + "\n" + 
+                "Støt Brysterne pris per KM: 2 kr";
         }
 
         private void KnapFindTaxa_Click(object sender, RoutedEventArgs e)

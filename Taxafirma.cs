@@ -11,15 +11,12 @@ namespace WPF_Projekt3_TaxaFirma
     {
         public List<Kunde> listKunder = new List<Kunde>();
         public List<Taxa> listTaxaer = new List<Taxa>();
-
         public List<Chauffør> listChauffører = new List<Chauffør>();
-
         public List<Bestilling> listBestillinger = new List<Bestilling>();
-
         public List<Taxaoperatør> listTaxaoperatør = new List<Taxaoperatør>();
-        public List<Chauffør> taxaMedChauffør = new List<Chauffør>();
-        public List<Chauffør> taxaUdenChauffør = new List<Chauffør>();
-        public List<Taxa> taxaUdenFisk = new List<Taxa>();
+        public List<Chauffør> listeChaufførerMedTaxa = new List<Chauffør>();
+        public List<Chauffør> listeChaufførerUdenTaxa = new List<Chauffør>();
+        public List<Taxa> listeTaxaUdenChauffør = new List<Taxa>();
 
 
         public bool FindKunde(string brugerNavn, string adgangskode)
@@ -32,9 +29,7 @@ namespace WPF_Projekt3_TaxaFirma
                 {
                     kunde.erLoggetInd = true;
                     return true;
-
                 }
-
                 i++;
             }
             return false;
@@ -50,11 +45,8 @@ namespace WPF_Projekt3_TaxaFirma
                     ch.erLoggetInd = true;
                     return true;
                 }
-
                 i++;
             }
-
-
             return false;
         }
 
@@ -69,7 +61,6 @@ namespace WPF_Projekt3_TaxaFirma
             else
             {
                 return false;
-
             }
         }
 
@@ -116,20 +107,13 @@ namespace WPF_Projekt3_TaxaFirma
 
                 if (brugerNavn == Ch.brugerNavn)
                 {
-
-
                     svar = Ch.tildeltTaxa.nrPlade;
                 }
-
-
 
                 i++;
             }
             return svar;
-
         }
-
-
 
         public bool ÆndreStatusStartVagt(string brugerNavn)
         {
@@ -223,7 +207,6 @@ namespace WPF_Projekt3_TaxaFirma
                 {
                     svar = ch.stopwatch;
                 }
-
                 i++;
             }
             return svar;
@@ -266,7 +249,6 @@ namespace WPF_Projekt3_TaxaFirma
                 }
                 i++;
             }
-
             return svar;
         }
 
@@ -298,63 +280,57 @@ namespace WPF_Projekt3_TaxaFirma
                     svar = cc.brugerNavn;
                     return svar;
                 }
-                i++;
-
+               i++;
             }
             return svar;
         }
 
-        public void findTildelteTaxa()
+        public List<Chauffør> HentListeChaufførMedTaxa()
         {
-
-        }
-
-        public List<Chauffør> LavListeTaxaMedChauffør()
-        {
-            taxaMedChauffør.Clear();
+            listeChaufførerMedTaxa.Clear();
             int i = 0;
             while(i < listChauffører.Count)
             {
                 Chauffør cc = listChauffører[i];
                 if(cc.tildeltTaxa != null)
                 {
-                    taxaMedChauffør.Add(listChauffører[i]);
+                    listeChaufførerMedTaxa.Add(listChauffører[i]);
                 }
                 i++;
             }
-            return taxaMedChauffør;
+            return listeChaufførerMedTaxa;
         }
 
-        public List<Chauffør> LavListeChaufførUdenTaxa()
+        public List<Chauffør> HentListeChaufførUdenTaxa()
         {
-            taxaUdenChauffør.Clear();
+            listeChaufførerUdenTaxa.Clear();
             int i = 0;
             while (i < listChauffører.Count)
             {
                 Chauffør cc = listChauffører[i];
                 if (cc.tildeltTaxa == null)
                 {
-                    taxaUdenChauffør.Add(listChauffører[i]);
+                    listeChaufførerUdenTaxa.Add(listChauffører[i]);
                 }
                 i++;
             }
-            return taxaUdenChauffør;
+            return listeChaufførerUdenTaxa;
         }
 
-        public List<Taxa> LavListeTaxaUdenChauffør()
+        public List<Taxa> HentListeTaxaUdenChauffør()
         {
-            taxaUdenFisk.Clear();
+            listeTaxaUdenChauffør.Clear();
             int i = 0;
             while (i < listTaxaer.Count)
             {
                 Chauffør cc = listChauffører[i];
                 if (cc.tildeltTaxa == null)
                 {
-                    taxaUdenFisk.Add(listTaxaer[i]);
+                    listeTaxaUdenChauffør.Add(listTaxaer[i]);
                 }
                 i++;
             }
-            return taxaUdenFisk;
+            return listeTaxaUdenChauffør;
         }
         public string FåFatITid(DateTime value)
         {
@@ -377,8 +353,8 @@ namespace WPF_Projekt3_TaxaFirma
                 "Chauffør: " + bestilling.Ch.brugerNavn + Environment.NewLine +
                 "Tid/Dato: " + Tidklokken + Environment.NewLine +
                 "---------------------------------------" + Environment.NewLine;
-            File.AppendAllText(filsti, tekst, Encoding.UTF8); //Encoding - så særlige bogstaver på dansk kan fungere
 
+            File.AppendAllText(filsti, tekst, Encoding.UTF8); //Encoding - så særlige bogstaver på dansk kan fungere
         }
         public void GemArbejdsTiden(String brugerNavn)
         {
@@ -390,15 +366,8 @@ namespace WPF_Projekt3_TaxaFirma
                 "Chauffør: " + brugerNavn + "\n" +
                 "Tid/Dato: " + CH.stopwatch.Elapsed;
 
-
             File.AppendAllText(filsti, tekst, Encoding.UTF8); //Encoding - så særlige bogstaver på dansk kan fungere
-
         }
-
-
-
-
-
 
     }
 }

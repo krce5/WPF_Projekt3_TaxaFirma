@@ -30,17 +30,17 @@ namespace WPF_Projekt3_TaxaFirma
             this.brugerNavnOperatør = brugerNavnOperatør;
 
 
-            List<Chauffør> listeChaufførerMedTaxaer = new List<Chauffør>();
-            listeChaufførerMedTaxaer = taxafirma.LavListeTaxaMedChauffør();
-            ListboxTaxaTildeltChauffør.ItemsSource = listeChaufførerMedTaxaer;
+            List<Chauffør> listeChaufførerMedTaxa = new List<Chauffør>();
+            listeChaufførerMedTaxa = taxafirma.HentListeChaufførMedTaxa();
+            ListBoxChaufførerMedTaxa.ItemsSource = listeChaufførerMedTaxa;
 
-            List<Chauffør> listChaufførerUdenTaxaer = new List<Chauffør>();
-            listChaufførerUdenTaxaer = taxafirma.LavListeChaufførUdenTaxa();
-            ListboxTaxaUdenCH.ItemsSource = listChaufførerUdenTaxaer;
+            List<Chauffør> listeChaufførerUdenTaxa = new List<Chauffør>();
+            listeChaufførerUdenTaxa = taxafirma.HentListeChaufførUdenTaxa();
+            ListBoxChaufførUdenTaxa.ItemsSource = listeChaufførerUdenTaxa;
 
-            List<Taxa> taxaudenfiske = new List<Taxa>();
-            taxaudenfiske = taxafirma.LavListeTaxaUdenChauffør();
-            ListboxChauffør.ItemsSource = taxaudenfiske;
+            List<Taxa> listeTaxaUdenChauffør = new List<Taxa>();
+            listeTaxaUdenChauffør = taxafirma.HentListeTaxaUdenChauffør();
+            ListBoxTaxaUdenChauffør.ItemsSource = listeTaxaUdenChauffør;
         }
 
 
@@ -54,15 +54,10 @@ namespace WPF_Projekt3_TaxaFirma
            
         }
 
-        private void ListboxTaxaUdenCH_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
         private void KnapFradelTaxa_Click(object sender, RoutedEventArgs e)
         {
   
-            Chauffør valgtChauffør = (Chauffør)ListboxTaxaTildeltChauffør.SelectedItem;
+            Chauffør valgtChauffør = (Chauffør)ListBoxChaufførerMedTaxa.SelectedItem;
 
             // Gemmer taxaen, før den fjernes fra chaufføren.
             Taxa valgtTaxa = valgtChauffør.tildeltTaxa;
@@ -71,54 +66,54 @@ namespace WPF_Projekt3_TaxaFirma
 
             // Flytter chaufføren fra listen med chauffører, der har en taxa,
             // til listen med chauffører, der ikke har en taxa.
-            taxafirma.taxaMedChauffør.Remove(valgtChauffør);
-            taxafirma.taxaUdenChauffør.Add(valgtChauffør);
+            taxafirma.listeChaufførerMedTaxa.Remove(valgtChauffør);
+            taxafirma.listeChaufførerUdenTaxa.Add(valgtChauffør);
 
             // Hvis chaufføren havde en taxa, tilføjes taxaen til listen
             // over taxaer uden chauffør.
             if (valgtTaxa != null)
             {
-                taxafirma.taxaUdenFisk.Add(valgtTaxa);
+                taxafirma.listeTaxaUdenChauffør.Add(valgtTaxa);
             }
 
             // Genindlæser listen med chauffører, der har en taxa.
-            ListboxTaxaTildeltChauffør.ItemsSource = null;
-            ListboxTaxaTildeltChauffør.ItemsSource = taxafirma.taxaMedChauffør;
+            ListBoxChaufførerMedTaxa.ItemsSource = null;
+            ListBoxChaufførerMedTaxa.ItemsSource = taxafirma.listeChaufførerMedTaxa;
             // Genindlæser listen med chauffører uden taxa.
-            ListboxTaxaUdenCH.ItemsSource = null;
-            ListboxTaxaUdenCH.ItemsSource = taxafirma.taxaUdenChauffør;
+            ListBoxChaufførUdenTaxa.ItemsSource = null;
+            ListBoxChaufførUdenTaxa.ItemsSource = taxafirma.listeChaufførerUdenTaxa;
             // Genindlæser listen med taxaer uden chauffør.
-            ListboxChauffør.ItemsSource = null;
-            ListboxChauffør.ItemsSource = taxafirma.taxaUdenFisk;
+            ListBoxTaxaUdenChauffør.ItemsSource = null;
+            ListBoxTaxaUdenChauffør.ItemsSource = taxafirma.listeTaxaUdenChauffør;
         }
 
         private void KnapTildelTaxa_Click(object sender, RoutedEventArgs e)
         {
             // Finder den valgte taxa og chauffør fra de to lister.
-            Taxa valgtTaxa = (Taxa)ListboxChauffør.SelectedItem;
-            Chauffør valgtChauffør = (Chauffør)ListboxTaxaUdenCH.SelectedItem;
+            Taxa valgtTaxa = (Taxa)ListBoxTaxaUdenChauffør.SelectedItem;
+            Chauffør valgtChauffør = (Chauffør)ListBoxChaufførUdenTaxa.SelectedItem;
 
             // Sætter taxaen sammen med den valgte chauffør.
             valgtChauffør.tildeltTaxa = valgtTaxa;
 
-            // Flytter chaufføren fra listen uden taxa til listen med tildelte taxaer.
-            taxafirma.taxaMedChauffør.Add(valgtChauffør);
-            taxafirma.taxaUdenChauffør.Remove(valgtChauffør);
-
+            // Flytter chaufføren fra listen uden taxa til listen med chaufører med taxaer.
+            taxafirma.listeChaufførerUdenTaxa.Remove(valgtChauffør);
+            taxafirma.listeChaufførerMedTaxa.Add(valgtChauffør);
+            
             // Fjerner taxaen fra listen over taxaer uden chauffør.
-            taxafirma.taxaUdenFisk.Remove(valgtTaxa);
+            taxafirma.listeTaxaUdenChauffør.Remove(valgtTaxa);
 
-            // Opdaterer listen over chauffører med tildelte taxaer.
-            ListboxTaxaTildeltChauffør.ItemsSource = null;
-            ListboxTaxaTildeltChauffør.ItemsSource = taxafirma.taxaMedChauffør;
+            // Opdaterer listen over chauffører med taxaer.
+            ListBoxChaufførerMedTaxa.ItemsSource = null;
+            ListBoxChaufførerMedTaxa.ItemsSource = taxafirma.listeChaufførerMedTaxa;
 
             // Opdaterer listen over chauffører uden taxa.
-            ListboxTaxaUdenCH.ItemsSource = null;
-            ListboxTaxaUdenCH.ItemsSource = taxafirma.taxaUdenChauffør;
+            ListBoxChaufførUdenTaxa.ItemsSource = null;
+            ListBoxChaufførUdenTaxa.ItemsSource = taxafirma.listeChaufførerUdenTaxa;
 
             // Opdaterer listen over taxaer uden chauffør.
-            ListboxChauffør.ItemsSource = null;
-            ListboxChauffør.ItemsSource = taxafirma.taxaUdenFisk;
+            ListBoxTaxaUdenChauffør.ItemsSource = null;
+            ListBoxTaxaUdenChauffør.ItemsSource = taxafirma.listeTaxaUdenChauffør;
         }
     }
 }

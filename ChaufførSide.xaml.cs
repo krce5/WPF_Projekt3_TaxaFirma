@@ -45,17 +45,17 @@ namespace WPF_Projekt3_TaxaFirma
             Stopwatch startTid = taxafirma.FindStopwatch(brugerNavn);
             if (ændreStatus == true)
             {
-                TxtBoxStatus.Text = "Du har startet din vagt: " + ændreStatus;
+                TxtBoxStatus.Text = "Din vagt er startet." + "\n" + "God arbejdslyst!";
                 startTid.Start();
                 
             }
             else
             {
-                TxtBoxStatus.Text = "Din vagt er afsluttet: " + ændreStatus;
+                TxtBoxStatus.Text = "Din vagt er afsluttet." + "\n" + "Tak for i dag!";
                 startTid.Stop();
                 TxtSeTiden.Text = startTid.Elapsed.ToString(@"hh\:mm\:ss");
                 startTid.Reset();
-                TxtBoxStatus.Text = "Din vagt er afsluttet";
+                TxtBoxStatus.Text = "Din vagt er afsluttet." + "\n" + "Tak for i dag!";
                 
             }
 
@@ -77,11 +77,11 @@ namespace WPF_Projekt3_TaxaFirma
             bool ændreStatus = taxafirma.ÆndreStatusLedighed(brugerNavn);
             if (ændreStatus == false)
             {
-                TxtBoxStatus.Text = "Du er ikke ledig: " + ændreStatus;
+                TxtBoxStatus.Text = "Du er ikke ledig.";
             }
             else
             {
-                TxtBoxStatus.Text = "Du er ledig: " + ændreStatus;
+                TxtBoxStatus.Text = "Du er ledig.";
             }
         }
 
@@ -91,11 +91,11 @@ namespace WPF_Projekt3_TaxaFirma
             bool ændreStatus = taxafirma.ÆndreStatusPause(brugerNavn);
             if (ændreStatus == true)
             {
-                TxtBoxStatus.Text = "Du har startet din pause: " + ændreStatus;
+                TxtBoxStatus.Text = "Du har startet din pause.";
             }
             else
             {
-                TxtBoxStatus.Text = "Din pause er slut: " + ændreStatus;
+                TxtBoxStatus.Text = "Du har afsluttet din pause.";
             }
         }
 
