@@ -94,7 +94,7 @@ namespace WPF_Projekt3_TaxaFirma
         {
             int i = 0;
             string svar = "";
-            while (i < listTaxaer.Count)
+            while(i < listTaxaer.Count)
             {
                 Taxa taxanr = listTaxaer[i];
                 if (taxanr.erLedig == true)
@@ -311,6 +311,7 @@ namespace WPF_Projekt3_TaxaFirma
 
         public List<Chauffør> LavListeTaxaMedChauffør()
         {
+            taxaMedChauffør.Clear();
             int i = 0;
             while(i < listChauffører.Count)
             {
@@ -326,6 +327,7 @@ namespace WPF_Projekt3_TaxaFirma
 
         public List<Chauffør> LavListeChaufførUdenTaxa()
         {
+            taxaUdenChauffør.Clear();
             int i = 0;
             while (i < listChauffører.Count)
             {
@@ -341,8 +343,9 @@ namespace WPF_Projekt3_TaxaFirma
 
         public List<Taxa> LavListeTaxaUdenChauffør()
         {
+            taxaUdenFisk.Clear();
             int i = 0;
-            while(i < listTaxaer.Count)
+            while (i < listTaxaer.Count)
             {
                 Chauffør cc = listChauffører[i];
                 if (cc.tildeltTaxa == null)
