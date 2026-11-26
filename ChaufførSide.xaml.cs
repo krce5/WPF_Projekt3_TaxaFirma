@@ -101,6 +101,8 @@ namespace WPF_Projekt3_TaxaFirma
 
         private void KnapLoggeUd_Click(object sender, RoutedEventArgs e)
         {
+            taxafirma.GemArbejdsTiden(brugerNavn);
+
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
             this.Close();

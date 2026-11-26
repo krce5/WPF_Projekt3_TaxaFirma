@@ -40,6 +40,7 @@ namespace WPF_Projekt3_TaxaFirma
             string stedA = TxtBoxStedA.Text;
             string stedB = TxtBoxStedB.Text;
             string brugerKunde = brugerNavnKunde;
+            string tid = taxafirma.FåFatITid(DateTime.Now);
             // string nrnr = taxafirma.FindTaxaNrplade();
             if (valgt != null)
             {
@@ -59,7 +60,8 @@ namespace WPF_Projekt3_TaxaFirma
                             "Til: " + bestilling.B + "\n" +
                             "Kundenavn: " + bestilling.kunde.brugerNavn + "\n" +
                             "Med bil: " + bestilling.Taxa.nrPlade + "\n" +
-                            "Din chauffør: " + bestilling.Ch.brugerNavn;
+                            "Din chauffør: " + bestilling.Ch.brugerNavn + "\n" +
+                            "Tid/Dato: " + tid;
 
                         taxafirma.GemBestillingSomTxt(bestilling); //vi kalder metoden for at gemme bestillingen i .txt filen
                     }

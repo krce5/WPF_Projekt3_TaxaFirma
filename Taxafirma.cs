@@ -356,10 +356,17 @@ namespace WPF_Projekt3_TaxaFirma
             }
             return taxaUdenFisk;
         }
+        public string FåFatITid(DateTime value)
+        {
+            return value.ToString("yyyy/MM/dd/HH/mm/ss");
+        }
+
 
         public void GemBestillingSomTxt(Bestilling bestilling)
         {
-            string filsti = Path.Combine(AppContext.BaseDirectory, "gemteBestillinger.txt"); //Fortæller hvor filen skal gemmes
+            string filsti = Path.Combine(AppContext.BaseDirectory, "GemteBestillinger.txt"); //Fortæller hvor filen skal gemmes
+
+            String Tidklokken = FåFatITid(DateTime.Now);
 
             string tekst =  //fortælleer hvad der skal gemmes i filen
                 "Bestillingsnr: " + bestilling.bestillingsNr + Environment.NewLine +
@@ -368,9 +375,30 @@ namespace WPF_Projekt3_TaxaFirma
                 "Kundenavn: " + bestilling.kunde.brugerNavn + Environment.NewLine +
                 "Med bil: " + bestilling.Taxa.nrPlade + Environment.NewLine +
                 "Chauffør: " + bestilling.Ch.brugerNavn + Environment.NewLine +
+                "Tid/Dato: " + Tidklokken + Environment.NewLine +
                 "---------------------------------------" + Environment.NewLine;
             File.AppendAllText(filsti, tekst, Encoding.UTF8); //Encoding - så særlige bogstaver på dansk kan fungere
 
         }
+        public void GemArbejdsTiden(String brugerNavn)
+        {
+            Chauffør CH = new Chauffør();
+            CH.brugerNavn = brugerNavn;
+
+            string filsti = Path.Combine(AppContext.BaseDirectory, "GemteArbejdsTider.txt"); //Fortæller hvor filen skal gemmes
+            string tekst =
+                "Chauffør: " + brugerNavn + "\n" +
+                "Tid/Dato: " + CH.stopwatch.Elapsed;
+
+
+            File.AppendAllText(filsti, tekst, Encoding.UTF8); //Encoding - så særlige bogstaver på dansk kan fungere
+
+        }
+
+
+
+
+
+
     }
 }
