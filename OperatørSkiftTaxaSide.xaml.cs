@@ -30,9 +30,20 @@ namespace WPF_Projekt3_TaxaFirma
             this.brugerNavnOperatør = brugerNavnOperatør;
 
 
+            List<Chauffør> listeChaufførerMedTaxaer = new List<Chauffør>();
+            listeChaufførerMedTaxaer = taxafirma.LavListeTaxaMedChauffør();
+            ListboxTaxaTildeltChauffør.ItemsSource = listeChaufførerMedTaxaer;
 
-            ListboxTaxaTildeltChauffør.ItemsSource = taxafirma.taxaMedChauffør;
+            List<Chauffør> listChaufførerUdenTaxaer = new List<Chauffør>();
+            listChaufførerUdenTaxaer = taxafirma.LavListeChaufførUdenTaxa();
+            ListboxTaxaUdenCH.ItemsSource = listChaufførerUdenTaxaer;
+
+            List<Taxa> taxaudenfiske = new List<Taxa>();
+            taxaudenfiske = taxafirma.LavListeTaxaUdenChauffør();
+            ListboxChauffør.ItemsSource = taxaudenfiske;
         }
+
+
 
         private void KnapTilbage_Click(object sender, RoutedEventArgs e)
         {
@@ -41,6 +52,11 @@ namespace WPF_Projekt3_TaxaFirma
             this.Close();
 
            
+        }
+
+        private void ListboxTaxaUdenCH_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }

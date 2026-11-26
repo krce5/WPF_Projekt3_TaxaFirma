@@ -44,7 +44,7 @@ namespace WPF_Projekt3_TaxaFirma
             Chauffør ch1 = new Chauffør { brugerNavn = "Bob", adgangskode = "123", tildeltTaxa = t1};
             Chauffør ch2 = new Chauffør { brugerNavn = "Mogens", adgangskode = "321", tildeltTaxa = t3};
             Chauffør ch3 = new Chauffør { brugerNavn = "Jakob", adgangskode = "456", tildeltTaxa = t2 };
-            Chauffør ch4 = new Chauffør { brugerNavn = "Penny", adgangskode = "456", tildeltTaxa = t4 };
+            Chauffør ch4 = new Chauffør { brugerNavn = "Penny", adgangskode = "456" };
             taxafirma.listChauffører.Add(ch1);
             taxafirma.listChauffører.Add(ch2);
             taxafirma.listChauffører.Add(ch3);

@@ -20,10 +20,21 @@ namespace WPF_Projekt3_TaxaFirma
         public double tid;
         public override string ToString()
         {
-            return brugerNavn + " mødt på arbejde: " + start + "\n" +
-                     "ledighed: " + erLedig + ", pause: " + pause + "\n" + 
+            
+            if(tildeltTaxa != null)
+            {
+                return brugerNavn + " mødt på arbejde: " + start + "\n" +
+                     "ledighed: " + erLedig + ", pause: " + pause + "\n" +
                      "bil: " + tildeltTaxa.nrPlade + "\n" +
                      "----------------";
+            }
+            else
+            {
+                return brugerNavn + " mødt på arbejde: " + start + "\n" +
+                    "ledighed: " + erLedig + ", pause: " + pause + "\n" +
+                    "uden taxa" + "\n" +
+                    "----------------";
+            }
         }
     }
 }
