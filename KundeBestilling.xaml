@@ -24,7 +24,7 @@
                         Opacity="0.3"/>
             </Rectangle.Effect>
         </Rectangle>
-        <Rectangle HorizontalAlignment="Left" Height="224" Margin="23,117,0,0" VerticalAlignment="Top" Width="945">
+        <Rectangle HorizontalAlignment="Left" Height="237" Margin="23,104,0,0" VerticalAlignment="Top" Width="945">
             <Rectangle.Fill>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
                     <GradientStop Color="#F6EEF3" Offset="0"/>
@@ -32,26 +32,22 @@
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
-        <TextBox x:Name="TxtBoxStedA" HorizontalAlignment="Left" Margin="87,171,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="215" Height="36"/>
-        <TextBox x:Name="TxtBoxStedB" HorizontalAlignment="Left" Margin="86,217,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="215" Height="36"/>
+        <TextBox x:Name="TxtBoxStedA" HorizontalAlignment="Left" Margin="65,145,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="215" Height="36"/>
+        <TextBox x:Name="TxtBoxStedB" HorizontalAlignment="Left" Margin="64,191,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="215" Height="36"/>
         <Button x:Name="KnapBestil" Content="Bestil" Background="#BA55D3" Foreground="White" HorizontalAlignment="Left" Margin="812,433,0,0" VerticalAlignment="Top" Width="134" Height="40" Click="KnapBestil_Click"/>
-        <Label Content="Fra" HorizontalAlignment="Left" Margin="60,181,0,0" VerticalAlignment="Top"/>
-        <Label Content="Til" HorizontalAlignment="Left" Margin="62,227,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="KnapFindTaxa" Content="Find Taxaer" HorizontalAlignment="Left" Margin="167,267,0,0" VerticalAlignment="Top" Width="134" Height="31" Click="KnapFindTaxa_Click"/>
-        <Label x:Name="LblBesked" Content="" HorizontalAlignment="Left" Margin="87,311,0,0" VerticalAlignment="Top" Width="452"/>
-        <ListBox x:Name="ListBoxLedigTaxa" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="336,171,461,226" SelectionChanged="ListBoxLedigTaxa_SelectionChanged"/>
-        <Label x:Name="LblSvar" Content="Velkommen bruger!" HorizontalAlignment="Left" Margin="25,77,0,0" VerticalAlignment="Top" Height="37" Width="354" FontSize="16"/>
+        <Label Content="Fra" HorizontalAlignment="Left" Margin="38,155,0,0" VerticalAlignment="Top"/>
+        <Label Content="Til" HorizontalAlignment="Left" Margin="40,201,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="KnapFindTaxa" Content="Find Taxaer" HorizontalAlignment="Left" Margin="145,241,0,0" VerticalAlignment="Top" Width="134" Height="31" Click="KnapFindTaxa_Click"/>
+        <Label x:Name="LblBesked" Content="" HorizontalAlignment="Left" Margin="65,285,0,0" VerticalAlignment="Top" Width="220" Height="36"/>
+        <ListBox x:Name="ListBoxLedigTaxa" Margin="314,145,324,213"/>
+        <Label x:Name="LblSvar" Content="Velkommen bruger!" HorizontalAlignment="Left" Margin="25,77,0,0" VerticalAlignment="Top" Height="27" Width="354" FontSize="16"/>
         <TextBox x:Name="TxtBestillingsOversigt" HorizontalAlignment="Left" Margin="68,387,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="671" Height="115"/>
         <Button x:Name="KnapLoggeUd" Content="Logge Ud" HorizontalAlignment="Left" Margin="871,23,0,0" VerticalAlignment="Top" Click="KnapLoggeUd_Click"/>
-
         <Image Source="Images/logo.png" HorizontalAlignment="Left" Height="54" Margin="23,9,0,0" VerticalAlignment="Top" Width="168"/>
-        <Label x:Name="LblBestilTaxa" Content="Bestil en taxa:" HorizontalAlignment="Left" Margin="87,132,0,0" VerticalAlignment="Top" Height="30" Width="256" FontSize="20"/>
-        <Label x:Name="LblAlleTaxaer" Content="Alle taxaer:" HorizontalAlignment="Left" Margin="336,146,0,0" VerticalAlignment="Top" Width="160"/>
+        <Label x:Name="LblBestilTaxa" Content="Bestil en taxa:" HorizontalAlignment="Left" Margin="65,111,0,0" VerticalAlignment="Top" Height="24" Width="256" FontSize="16"/>
+        <Label x:Name="LblAlleTaxaer" Content="Alle taxaer:" HorizontalAlignment="Left" Margin="314,120,0,0" VerticalAlignment="Top" Width="160"/>
         <Label x:Name="LblAlleTaxaer_Copy" Content="Bestillings oversigt:" HorizontalAlignment="Left" Margin="68,362,0,0" VerticalAlignment="Top" Width="217" FontSize="16"/>
-        <TextBox x:Name="TxtBoxPris" HorizontalAlignment="Left" Margin="587,171,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="203" Height="137"/>
-        <Label x:Name="LblPrisOversigt" Content="Pris oversigt:" HorizontalAlignment="Left" Margin="587,146,0,0" VerticalAlignment="Top" Width="160"/>
-
-
-
+        <TextBox x:Name="TxtBoxPris" HorizontalAlignment="Left" Margin="726,145,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="203" Height="176"/>
+        <Label x:Name="LblPrisOversigt" Content="Pris oversigt:" HorizontalAlignment="Left" Margin="726,120,0,0" VerticalAlignment="Top" Width="160"/>
     </Grid>
 </Window>

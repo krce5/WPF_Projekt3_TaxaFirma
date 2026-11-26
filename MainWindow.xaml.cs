@@ -31,10 +31,10 @@ namespace WPF_Projekt3_TaxaFirma
             Kunde k2 = new Kunde {brugerNavn = "Bent", adgangskode = "hej med dig" };
             taxafirma.listKunder.Add(k2);
  
-            Taxa t1 = new Taxa { erLedig = true, nrPlade = "AB 12 345" };
-            Taxa t2 = new Taxa { erLedig = false, nrPlade = "EB 35 196" };
-            Taxa t3 = new Taxa { erLedig = true, nrPlade = "XT 42 174" };
-            Taxa t4 = new Taxa { erLedig = false, nrPlade = "AY 56 894" };
+            Taxa t1 = new Taxa { erLedig = true, nrPlade = "AB 12 345", URL="bil1.png" };
+            Taxa t2 = new Taxa { erLedig = false, nrPlade = "EB 35 196", URL = "bil2.png" };
+            Taxa t3 = new Taxa { erLedig = true, nrPlade = "XT 42 174", URL = "bil3.png" };
+            Taxa t4 = new Taxa { erLedig = false, nrPlade = "AY 56 894", URL = "bil2.png" };
             taxafirma.listTaxaer.Add(t1);
             taxafirma.listTaxaer.Add(t2);
             taxafirma.listTaxaer.Add(t3);
@@ -79,7 +79,7 @@ namespace WPF_Projekt3_TaxaFirma
                 string nrplade = taxafirma.FindchaufførNrplade(TxtBoxBrugernavn.Text);
 
 
-                chaufførSide.LblNrPlade.Content = "Du skal kører med " + nrplade;
+                chaufførSide.LblNrPlade.Content = "Du skal kører med taxa: " + nrplade;
 
 
                 //få adgang til og udskriv de gemte bestillinger fra .txt filen
