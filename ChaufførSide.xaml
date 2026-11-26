@@ -32,8 +32,8 @@
             </Rectangle.Fill>
         </Rectangle>
         <Image Source="Images/logo.png" HorizontalAlignment="Left" Height="54" Margin="23,9,0,0" VerticalAlignment="Top" Width="168"/>
-        <Label Content="Din status:" HorizontalAlignment="Left" Margin="48,264,0,0" VerticalAlignment="Top" Width="71"/>
-        <TextBox x:Name="TxtBoxStatus" HorizontalAlignment="Left" Margin="124,268,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Din status:" HorizontalAlignment="Left" Margin="672,350,0,0" VerticalAlignment="Top" Width="70"/>
+        <TextBox x:Name="TxtBoxStatus" HorizontalAlignment="Left" Margin="758,335,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="185" Height="50"/>
         <Button x:Name="KnapStartVagt" Content="Start / Afslut Vagt" Background="#BA55D3" Foreground="White" HorizontalAlignment="Left" Margin="54,442,0,0" VerticalAlignment="Top" Height="36" Width="146" Click="KnapStartVagt_Click"/>
         <Button x:Name="KnapLedighed" Content="Ledig / Ikke Ledig" HorizontalAlignment="Left" Margin="234,442,0,0" VerticalAlignment="Top" Height="36" Width="146" Click="KnapLedighed_Click"/>
         <Button x:Name="KnapPause" Content="Start / Slut Pause" HorizontalAlignment="Left" Margin="414,442,0,0" VerticalAlignment="Top" Height="36" Width="164" Click="KnapPause_Click"/>
