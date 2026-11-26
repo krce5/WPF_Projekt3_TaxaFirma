@@ -58,5 +58,39 @@ namespace WPF_Projekt3_TaxaFirma
         {
 
         }
+
+        private void KnapFradelTaxa_Click(object sender, RoutedEventArgs e)
+        {
+  
+            Chauffør valgtChauffør = (Chauffør)ListboxTaxaTildeltChauffør.SelectedItems;
+
+            // Gemmer taxaen, før den fjernes fra chaufføren.
+            Taxa valgtTaxa = valgtChauffør.tildeltTaxa;
+            // Fjerner taxaen fra den valgte chauffør.
+            valgtChauffør.tildeltTaxa = null;
+
+            // Flytter chaufføren fra listen med chauffører, der har en taxa,
+            // til listen med chauffører, der ikke har en taxa.
+            taxafirma.taxaMedChauffør.Remove(valgtChauffør);
+            taxafirma.taxaUdenChauffør.Add(valgtChauffør);
+
+            // Hvis chaufføren havde en taxa, tilføjes taxaen til listen
+            // over taxaer uden chauffør.
+            if (valgtTaxa != null)
+            {
+                taxafirma.taxaUdenFisk.Add(valgtTaxa);
+            }
+
+            // Genindlæser listen med chauffører, der har en taxa.
+            ListboxTaxaTildeltChauffør.ItemsSource = null;
+            ListboxTaxaTildeltChauffør.ItemsSource = taxafirma.taxaMedChauffør;
+            // Genindlæser listen med chauffører uden taxa.
+            ListboxTaxaUdenCH.ItemsSource = null;
+            ListboxTaxaUdenCH.ItemsSource = taxafirma.taxaUdenChauffør;
+            // Genindlæser listen med taxaer uden chauffør.
+            ListboxChauffør.ItemsSource = null;
+            ListboxChauffør.ItemsSource = taxafirma.taxaUdenFisk;
+        }
+
     }
 }
