@@ -11,8 +11,8 @@
         </Style>
         <!-- Knappens udseende -->
         <Style TargetType="Button">
-            <Setter Property="Background" Value="#BA55D3" />
-            <Setter Property="Foreground" Value="White" />
+            <Setter Property="Background" Value="#F0F0F0" />
+            <Setter Property="Foreground" Value="Black" />
             <Setter Property="FontSize" Value="14" />
             <Setter Property="Padding" Value="10,5" />
             <Setter Property="BorderThickness" Value="0" />

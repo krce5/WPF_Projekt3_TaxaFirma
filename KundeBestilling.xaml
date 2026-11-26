@@ -34,15 +34,15 @@
         </Rectangle>
         <TextBox x:Name="TxtBoxStedA" HorizontalAlignment="Left" Margin="87,171,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="370" Height="36"/>
         <TextBox x:Name="TxtBoxStedB" HorizontalAlignment="Left" Margin="86,217,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="370" Height="36"/>
-        <Button x:Name="KnapBestil" Content="Bestil" HorizontalAlignment="Left" Margin="812,433,0,0" VerticalAlignment="Top" Width="134" Height="40" Click="KnapBestil_Click"/>
+        <Button x:Name="KnapBestil" Content="Bestil" Background="#BA55D3" Foreground="White" HorizontalAlignment="Left" Margin="812,433,0,0" VerticalAlignment="Top" Width="134" Height="40" Click="KnapBestil_Click"/>
         <Label Content="Fra" HorizontalAlignment="Left" Margin="60,181,0,0" VerticalAlignment="Top"/>
         <Label Content="Til" HorizontalAlignment="Left" Margin="62,227,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="KnapFindTaxa" Content="Find Taxaer" Background="#F0F0F0" Foreground="Black" HorizontalAlignment="Left" Margin="322,277,0,0" VerticalAlignment="Top" Width="134" Height="31" Click="KnapFindTaxa_Click"/>
+        <Button x:Name="KnapFindTaxa" Content="Find Taxaer" HorizontalAlignment="Left" Margin="322,277,0,0" VerticalAlignment="Top" Width="134" Height="31" Click="KnapFindTaxa_Click"/>
         <Label x:Name="LblBesked" Content="sdfsdfsdfs" HorizontalAlignment="Left" Margin="87,283,0,0" VerticalAlignment="Top" Width="214"/>
         <ListBox x:Name="ListBoxLedigTaxa" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="556,171,90,226" SelectionChanged="ListBoxLedigTaxa_SelectionChanged"/>
-        <Label x:Name="LblSvar" Content="Velkommen bruger!" HorizontalAlignment="Left" Margin="25,77,0,0" VerticalAlignment="Top" Height="37" Width="354" FontSize="22"/>
+        <Label x:Name="LblSvar" Content="Velkommen bruger!" HorizontalAlignment="Left" Margin="25,77,0,0" VerticalAlignment="Top" Height="37" Width="354" FontSize="16"/>
         <TextBox x:Name="TxtBestillingsOversigt" HorizontalAlignment="Left" Margin="68,387,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="671" Height="115"/>
-        <Button x:Name="KnapLoggeUd" Content="Logge Ud" Foreground="Black" Background="#F0F0F0"  HorizontalAlignment="Left" Margin="871,23,0,0" VerticalAlignment="Top" Click="KnapLoggeUd_Click"/>
+        <Button x:Name="KnapLoggeUd" Content="Logge Ud" HorizontalAlignment="Left" Margin="871,23,0,0" VerticalAlignment="Top" Click="KnapLoggeUd_Click"/>
 
         <Image Source="Images/logo.png" HorizontalAlignment="Left" Height="54" Margin="23,9,0,0" VerticalAlignment="Top" Width="168"/>
         <Label x:Name="LblBestilTaxa" Content="Bestil en taxa:" HorizontalAlignment="Left" Margin="87,132,0,0" VerticalAlignment="Top" Height="30" Width="256" FontSize="20"/>

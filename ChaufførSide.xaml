@@ -34,16 +34,16 @@
         <Image Source="Images/logo.png" HorizontalAlignment="Left" Height="54" Margin="23,9,0,0" VerticalAlignment="Top" Width="168"/>
         <Label Content="Din status:" HorizontalAlignment="Left" Margin="48,264,0,0" VerticalAlignment="Top" Width="71"/>
         <TextBox x:Name="TxtBoxStatus" HorizontalAlignment="Left" Margin="124,268,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="KnapStartVagt" Content="Start / Afslut Vagt" HorizontalAlignment="Left" Margin="54,442,0,0" VerticalAlignment="Top" Height="36" Width="146" Click="KnapStartVagt_Click"/>
-        <Button x:Name="KnapLedighed" Content="Ledig / Ikke Ledig" Background="#F0F0F0" Foreground="Black" HorizontalAlignment="Left" Margin="234,442,0,0" VerticalAlignment="Top" Height="36" Width="146" Click="KnapLedighed_Click"/>
-        <Button x:Name="KnapPause" Content="Start / Slut Pause" Background="#F0F0F0" Foreground="Black" HorizontalAlignment="Left" Margin="414,442,0,0" VerticalAlignment="Top" Height="36" Width="164" Click="KnapPause_Click"/>
-        <Label x:Name="LblVelkommen" Content="Velkommen" HorizontalAlignment="Left" Margin="48,112,0,0" VerticalAlignment="Top" Width="479" FontSize="20" />
+        <Button x:Name="KnapStartVagt" Content="Start / Afslut Vagt" Background="#BA55D3" Foreground="White" HorizontalAlignment="Left" Margin="54,442,0,0" VerticalAlignment="Top" Height="36" Width="146" Click="KnapStartVagt_Click"/>
+        <Button x:Name="KnapLedighed" Content="Ledig / Ikke Ledig" HorizontalAlignment="Left" Margin="234,442,0,0" VerticalAlignment="Top" Height="36" Width="146" Click="KnapLedighed_Click"/>
+        <Button x:Name="KnapPause" Content="Start / Slut Pause" HorizontalAlignment="Left" Margin="414,442,0,0" VerticalAlignment="Top" Height="36" Width="164" Click="KnapPause_Click"/>
+        <Label x:Name="LblVelkommen" Content="Velkommen" HorizontalAlignment="Left" Margin="48,112,0,0" VerticalAlignment="Top" Width="479" FontSize="16" />
         <Label x:Name="LblNrPlade" Content="I dag skal du køre med: " HorizontalAlignment="Left" Margin="48,149,0,0" VerticalAlignment="Top" Width="479"/>
-        <Button x:Name="SeTidNu" Content="Se min arbejdstid" Background="#F0F0F0" Foreground="Black" HorizontalAlignment="Left" Margin="639,442,0,0" VerticalAlignment="Top" Height="36" Width="136" Click="SeTidNu_Click"/>
+        <Button x:Name="SeTidNu" Content="Se min arbejdstid" HorizontalAlignment="Left" Margin="639,442,0,0" VerticalAlignment="Top" Height="36" Width="136" Click="SeTidNu_Click"/>
         <TextBox x:Name="TxtSeTiden" HorizontalAlignment="Left" Height="36" Margin="795,442,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="148"/>
         <Label Content="Dine bestillinger:" HorizontalAlignment="Left" Margin="48,174,0,0" VerticalAlignment="Top" Width="224"/>
         <ListBox x:Name="ListBoxBestillinger" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="48,205,473,149"/>
-        <Button x:Name="KnapLoggeUd" Content="Logge Ud" Background="#F0F0F0" Foreground="Black" HorizontalAlignment="Left" Margin="841,22,0,0" VerticalAlignment="Top" Width="102" Click="KnapLoggeUd_Click"/>
+        <Button x:Name="KnapLoggeUd" Content="Logge Ud" HorizontalAlignment="Left" Margin="841,22,0,0" VerticalAlignment="Top" Width="102" Click="KnapLoggeUd_Click"/>
 
     </Grid>
 </Window>

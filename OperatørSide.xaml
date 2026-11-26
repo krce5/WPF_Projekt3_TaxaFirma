@@ -43,12 +43,12 @@
         <ListBox x:Name="ListBoxChauffører" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="36,155,691,89"/>
         <ListBox x:Name="ListBoxTaxaer" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="352,155,363,89"/>
         <ListBox x:Name="ListBoxBestillinger" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="675,155,40,89"/>
-        <Button x:Name="KnapLoggeUd" Content="Logge ud" Background="#F0F0F0" Foreground="Black" HorizontalAlignment="Left" Margin="852,22,0,0" VerticalAlignment="Top" Width="105" Click="LoggeUd_Knap_Click"/>
-        <Button x:Name="KnapSkiftTaxa" Content="Skift Taxa" HorizontalAlignment="Left" Margin="23,480,0,0" VerticalAlignment="Top" Width="115" Height="34" Click="KnapSkiftTaxa_Click"/>
+        <Button x:Name="KnapLoggeUd" Content="Logge ud" HorizontalAlignment="Left" Margin="852,22,0,0" VerticalAlignment="Top" Width="105" Click="LoggeUd_Knap_Click"/>
+        <Button x:Name="KnapSkiftTaxa" Background="#BA55D3" Foreground="White" Content="Skift Taxa" HorizontalAlignment="Left" Margin="23,480,0,0" VerticalAlignment="Top" Width="115" Height="34" Click="KnapSkiftTaxa_Click"/>
         <Label Content="Chauffører" HorizontalAlignment="Left" Margin="36,124,0,0" VerticalAlignment="Top" FontSize="16"/>
         <Label Content="Taxaer" HorizontalAlignment="Left" Margin="352,124,0,0" VerticalAlignment="Top" FontSize="16"/>
         <Label Content="Bestillinger" HorizontalAlignment="Left" Margin="675,124,0,0" VerticalAlignment="Top" FontSize="16"/>
-        <Label x:Name="LblVelkommen" Content="Velkommen bruger" HorizontalAlignment="Left" Margin="23,77,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <Label x:Name="LblVelkommen" Content="Velkommen bruger" HorizontalAlignment="Left" Margin="23,77,0,0" VerticalAlignment="Top" FontSize="16"/>
 
     </Grid>
 </Window>
