@@ -62,7 +62,7 @@ namespace WPF_Projekt3_TaxaFirma
         private void KnapFradelTaxa_Click(object sender, RoutedEventArgs e)
         {
   
-            Chauffør valgtChauffør = (Chauffør)ListboxTaxaTildeltChauffør.SelectedItems;
+            Chauffør valgtChauffør = (Chauffør)ListboxTaxaTildeltChauffør.SelectedItem;
 
             // Gemmer taxaen, før den fjernes fra chaufføren.
             Taxa valgtTaxa = valgtChauffør.tildeltTaxa;
@@ -92,5 +92,16 @@ namespace WPF_Projekt3_TaxaFirma
             ListboxChauffør.ItemsSource = taxafirma.taxaUdenFisk;
         }
 
+        private void KnapTildelTaxa_Click(object sender, RoutedEventArgs e)
+        {
+            Taxa valgtTaxa = (Taxa)ListboxChauffør.SelectedItem;
+            Chauffør valgtChauffør = (Chauffør)ListboxTaxaUdenCH.SelectedItem;
+
+            valgtChauffør.tildeltTaxa = valgtTaxa;
+            taxafirma.taxaMedChauffør.Remove(valgtChauffør);
+            taxafirma.taxaUdenFisk.Remove(valgtTaxa);
+
+            ListboxTaxaTildeltChauffør
+        }
     }
 }
