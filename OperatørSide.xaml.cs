@@ -25,6 +25,14 @@ namespace WPF_Projekt3_TaxaFirma
             InitializeComponent();
             this.taxafirma = taxafirma;
             this.brugerNavnOperatør = brugerNavnOperatør;
+
+            LblVelkommen.Content = "Velkommen " + this.brugerNavnOperatør;
+            ListBoxChauffører.ItemsSource = taxafirma.listChauffører;
+            ListBoxTaxaer.ItemsSource = taxafirma.listTaxaer;
+            ListBoxBestillinger.ItemsSource = taxafirma.listBestillinger;
+
+            string[] læsBestilling = System.IO.File.ReadAllLines(@"gemteBestillinger.txt");
+            ListBoxBestillinger.ItemsSource = læsBestilling;
         }
 
         private void LoggeUd_Knap_Click(object sender, RoutedEventArgs e)
@@ -39,17 +47,6 @@ namespace WPF_Projekt3_TaxaFirma
             OperatørSkiftTaxaSide operatørSide2 = new OperatørSkiftTaxaSide(taxafirma, brugerNavnOperatør);
             operatørSide2.Show();
             this.Close();
-
-            OperatørSide operatørSide = new OperatørSide(taxafirma, brugerNavnOperatør);
-            operatørSide.LblVelkommen.Content = "Velkommen " + operatørSide.brugerNavnOperatør;
-
-            operatørSide.ListBoxChauffører.ItemsSource = taxafirma.listChauffører;
-            operatørSide.ListBoxTaxaer.ItemsSource = taxafirma.listTaxaer;
-            operatørSide.ListBoxBestillinger.ItemsSource = taxafirma.listBestillinger;
-
-            string[] læsBestilling = System.IO.File.ReadAllLines(@"gemteBestillinger.txt");
-            operatørSide.ListBoxBestillinger.ItemsSource = læsBestilling;
-
         }
     }
 }
