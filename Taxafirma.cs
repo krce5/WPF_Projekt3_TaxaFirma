@@ -334,7 +334,7 @@ namespace WPF_Projekt3_TaxaFirma
         }
         public string FåFatITid(DateTime value)
         {
-            return value.ToString("yyyy/MM/dd/HH/mm/ss");
+            return value.ToString("'Dato:' yyyy/MM/dd 'Tid:' HH/mm/ss");
         }
 
 
@@ -351,7 +351,7 @@ namespace WPF_Projekt3_TaxaFirma
                 "Kundenavn: " + bestilling.kunde.brugerNavn + Environment.NewLine +
                 "Med bil: " + bestilling.Taxa.nrPlade + Environment.NewLine +
                 "Chauffør: " + bestilling.Ch.brugerNavn + Environment.NewLine +
-                "Tid/Dato: " + Tidklokken + Environment.NewLine +
+                Tidklokken + Environment.NewLine +
                 "---------------------------------------" + Environment.NewLine;
 
             File.AppendAllText(filsti, tekst, Encoding.UTF8); //Encoding - så særlige bogstaver på dansk kan fungere

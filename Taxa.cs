@@ -8,6 +8,8 @@ namespace WPF_Projekt3_TaxaFirma
     {
         public bool erLedig;
         public string nrPlade;
+
+        public string URL;
         public override string ToString()
         {
             if(erLedig == true)
