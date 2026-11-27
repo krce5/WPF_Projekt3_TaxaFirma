@@ -57,7 +57,7 @@ namespace WPF_Projekt3_TaxaFirma
                 Image billede = new Image();
                 billede.Width = 40;
                 billede.Height = 40;
-                billede.Margin = new Thickness(0, 0, 10, 0);
+                billede.Margin = new Thickness(0, 0, 5, 0);
 
                 //Indlæs billedet manuelt
                 billede.Source = new BitmapImage(new System.Uri("Images/" + aktuel.URL, System.UriKind.Relative));
